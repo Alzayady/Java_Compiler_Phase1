@@ -5,5 +5,5 @@ class LexicalAnalyzerScanner
     public:
 
     private: 
-       
-}
+
+};
