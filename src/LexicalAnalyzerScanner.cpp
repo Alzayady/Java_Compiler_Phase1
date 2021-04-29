@@ -15,10 +15,12 @@ void LexicalAnalyzerScanner::scan_input(string file_name)
             if (line.find("=") < line.size())
             {
                 line = remove_spaces(line);
+                extract_regular_definition(line);
             }
             else if (line.find(":") < line.size())
             {
                 line = remove_spaces(line);
+                extract_regular_expression(line);
             }
             else if (line[0] == '{')
             {
@@ -44,6 +46,15 @@ string LexicalAnalyzerScanner::remove_spaces(string line)
     return str;
 }
 
+void LexicalAnalyzerScanner::extract_regular_definition(string line)
+{
+
+}
+void LexicalAnalyzerScanner::extract_regular_expression(string line)
+{
+
+}
+
 void LexicalAnalyzerScanner::extract_keywords(string line)
 {
     string str = line;
@@ -56,7 +67,7 @@ void LexicalAnalyzerScanner::extract_keywords(string line)
     {
         if (token == "")
             continue;
-        keywords.push_back(token);
+        add_to_keywords(token);
     }
 }
 
@@ -71,6 +82,6 @@ void LexicalAnalyzerScanner::extract_punctuations(string line)
     {
         if (token == "")
             continue;
-        punctuations.push_back(token);
+        add_to_punctuations(token);
     }
 }
