@@ -6,6 +6,10 @@ class LexicalAnalyzerScanner
 {
     public:
         void scan_input(string file_name);
+        vector<int> find_all(string line, char delimeter);
+        vector<char> extract_elements_of_redef(string redef_value, int start_index, int end_index);
+        string conver_char_elements_to_separated_str(vector<char> elements);
+        void update_regular_definition_value(RegularDefinition redef, string redef_value, vector<char> elements, int start_index);
         void add_to_keywords(string str)
         {
             keywords.push_back(str);
