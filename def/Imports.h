@@ -1,3 +1,6 @@
+#ifndef _Imports_
+#define _Imports_
+
 #include <iostream>
 #include <bits/stdc++.h>
 #include <fstream>
@@ -7,3 +10,4 @@
 
 
 using namespace std;
+#endif
