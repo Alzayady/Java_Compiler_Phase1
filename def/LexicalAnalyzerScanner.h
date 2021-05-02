@@ -1,6 +1,9 @@
-#include "./def/Imports.h"
-#include "./def/RegularDefinition.h"
-#include "./def/RegularExpression.h"
+#ifndef _LexicalAnalyzerScanner_
+#define _LexicalAnalyzerScanner_
+
+#include "imports.h"
+#include "RegularDefinition.h"
+#include "RegularExpression.h"
 
 class LexicalAnalyzerScanner
 {
@@ -50,3 +53,4 @@ class LexicalAnalyzerScanner
         void extract_regular_expression(string line);
         string remove_spaces(string line);
 };
+#endif
