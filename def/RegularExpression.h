@@ -1,4 +1,7 @@
-#include "./def/Imports.h"
+#ifndef _RegularExpression_
+#define _RegularExpression_
+
+#include "Imports.h"
 
 class RegularExpression
 {
@@ -24,3 +27,4 @@ class RegularExpression
         string value;
         string type;
 };
+#endif
