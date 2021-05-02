@@ -1,13 +1,15 @@
-#include "./def/Imports.h"
+#ifndef _RegularDefinition_
+#define _RegularDefinition_
+
+#include "Imports.h"
 
 class RegularDefinition
 {
 
     public:
-        RegularDefinition()
-        {
+        RegularDefinition(){
             value = "";
-            type  = "";
+            type = "";
         }
         void set_value(string val)
         {
@@ -18,7 +20,7 @@ class RegularDefinition
             if (is_value_empty())
                 value = str;
             else
-                value = value + "|" + str;
+                value.append("|" + str);
         }
         bool is_value_empty()
         {
@@ -51,3 +53,4 @@ class RegularDefinition
         string type;
         vector<char> all_possible_chars;
 };
+#endif
