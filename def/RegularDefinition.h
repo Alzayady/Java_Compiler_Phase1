@@ -48,6 +48,10 @@ class RegularDefinition
         {
             return all_possible_chars;
         }
+        bool operator < (RegularDefinition rd) {
+            return (rd.get_type().size() < type.size());
+        }
+
     private:
         string value;
         string type;

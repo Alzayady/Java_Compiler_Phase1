@@ -80,12 +80,10 @@ string LexicalAnalyzerScanner::remove_spaces(string line)
 }
 void LexicalAnalyzerScanner::extract_regular_definition(string line)
 {
-    cout << "CALLED!" << endl;
     RegularDefinition redef;
     int delimeter_index = line.find('=');
     string redef_type = line.substr(0, delimeter_index);
     string redef_value = line.substr(delimeter_index + 1, line.size() - delimeter_index);
-    cout << "rd value: " + redef_value << endl;
     vector<RegularDefinition> regular_definitions = get_regular_definitions();
     vector<int> or_operators_indices = find_all(redef_value, '|');
     vector<char> values;
@@ -95,18 +93,14 @@ void LexicalAnalyzerScanner::extract_regular_definition(string line)
     if (or_operators_indices.empty())
     {
         vector<char> elements = extract_elements_of_redef(redef_value, start_index, end_index);
-        cout << "before: " + redef.get_value() << endl;
         update_regular_definition_value(redef, redef_value, elements, start_index);
-        cout << "after: " + redef.get_value() << endl;
     }
 
     for (int j = 0; j < or_operators_indices.size(); j++)
     {
         end_index = or_operators_indices[j];
         vector<char> elements = extract_elements_of_redef(redef_value, start_index, end_index);
-        cout << "before: " + redef.get_value() << endl;
         update_regular_definition_value(redef, redef_value, elements, start_index);
-        cout << "after: " + redef.get_value() << endl;
         redef.add_to_all_possible_chars(elements);
 
         start_index = end_index + 1;
@@ -116,13 +110,10 @@ void LexicalAnalyzerScanner::extract_regular_definition(string line)
         if (j == or_operators_indices.size() - 1)
         {
             elements = extract_elements_of_redef(redef_value, start_index, redef_value.size());
-            cout << "before: " + redef.get_value() << endl;
             update_regular_definition_value(redef, redef_value, elements, start_index);
-            cout << "after: " + redef.get_value() << endl;
             redef.add_to_all_possible_chars(elements);
         }
     }
-    cout << redef.get_type()+"\t" + redef.get_value() <<endl;
     add_to_regular_definitions(redef);
 }
 void LexicalAnalyzerScanner::extract_regular_expression(string line)
@@ -133,8 +124,8 @@ void LexicalAnalyzerScanner::extract_regular_expression(string line)
     string regex_type = line.substr(0, delimeter_index);
     string regex_value = line.substr(delimeter_index + 1, line.size() - delimeter_index);
     regex.set_type(regex_type);
-
     vector<RegularDefinition> regular_definitions = get_regular_definitions();
+    sort(regular_definitions.begin(), regular_definitions.end());
     for (int i = 0; i < regular_definitions.size(); i++)
     {
         RegularDefinition regular_definition = regular_definitions[i];
@@ -167,18 +158,16 @@ void LexicalAnalyzerScanner::extract_keywords(string line)
 
 void LexicalAnalyzerScanner::extract_punctuations(string line)
 {
-    cout << "PUNCTUAAATION" << endl;
     string str = line;
     str = str.substr(1, str.size() - 2);
 
     stringstream ss(str);
     string token;
-    while (ss >> str)
+    while (getline(ss, token, ' '))
     {
-        if (token == "")
+        if (token == "") 
             continue;
         add_to_punctuations(token);
-        cout << token + "added" << endl;
     }
 }
 /*
@@ -246,13 +235,11 @@ string redef_value,vector<char> elements, int start_index)
             {
                 string temp_s = redef.get_value();
                 redef.append_to_redef_value(replacement + "&" + replacement + "*");
-                cout <<"(" +replacement + "&" + replacement + "*) appended" << endl;
             }
             else if(type == redef_value.substr(start_index, type.size()))
             {
                 string temp_s = redef.get_value();
                 redef.append_to_redef_value(replacement);
-                cout << "(replacement) appended" << endl;
 
             }
         }
@@ -261,7 +248,6 @@ string redef_value,vector<char> elements, int start_index)
     {
         string res = convert_char_elements_to_str(elements);
         redef.append_to_redef_value(res);
-        cout << "("+res+") appended" << endl;
     }
 }
 string LexicalAnalyzerScanner::switch_positive_to_kleene_closure(string line, string redef_type)
@@ -312,22 +298,11 @@ string LexicalAnalyzerScanner::replace_regular_definitions(string line, string r
 }
 string LexicalAnalyzerScanner::handle_special_symbols(string regex_value)
 {
-    return "";
+
 }
 string LexicalAnalyzerScanner::handle_special_cases(string regex_value)
 {
-    return "";
-}
-string LexicalAnalyzerScanner::add_backslash_before_symbol(string line, string symbol)
-{
-    string res_str = line;
-    int index =0, last_found = 0;
-    while ((index = res_str.find(symbol, last_found)) < res_str.size())
-    {
-        res_str.replace(index, 1, "\\" + symbol );
-        last_found = index + 2;
-    }
-    return res_str;
+
 }
 string LexicalAnalyzerScanner::add_concatination_symbol(string line, int st, int length)
 {
