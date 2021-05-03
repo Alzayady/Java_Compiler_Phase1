@@ -6,6 +6,7 @@
 
 #include <utility>
 
+unsigned int Node::cnt =0  ;
 void Node::add_edge(Edge* edge) {
     edges.push_back(edge);
 }
@@ -24,4 +25,8 @@ void Node::set_expression_name(std::string name) {
 
 std::string Node::get_expression_name() {
     return expression_name;
+}
+
+bool Node::operator<(const Node &other ) const {
+    return (this->id) < (other.id)  ;
 }

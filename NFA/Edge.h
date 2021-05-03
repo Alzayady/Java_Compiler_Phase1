@@ -1,12 +1,11 @@
 //
 // Created by Manfi on 05/03/21.
 //
-
 #ifndef PROJECT_EDGE_H
 #define PROJECT_EDGE_H
 
 #include "Node.h"
-
+class Node ;
 class Edge {
 private:
     Node* node;
