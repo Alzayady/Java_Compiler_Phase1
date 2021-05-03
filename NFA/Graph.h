@@ -5,18 +5,15 @@
 #ifndef PROJECT_GRAPH_H
 #define PROJECT_GRAPH_H
 
-#include "Edge.h"
 #include "Node.h"
+#include <queue>
 
 class Graph {
 private:
     Node* start;
     Node* end;
 public:
-    static const char EPS = 'e';
-    Graph() {
-        Graph(EPS);
-    }
+    static const char LAMBDA = '?';
     Graph(char name) {
         start = new Node;
         end = new Node;
@@ -26,7 +23,8 @@ public:
     Node* get_end();
     void union_with(Graph* graph);
     void concatenate_with(Graph* graph);
-    void Kleene_closure();
+    void kleene_closure();
+    void print();
 };
 
 

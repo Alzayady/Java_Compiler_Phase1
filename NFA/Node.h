@@ -7,21 +7,26 @@
 
 #include <iostream>
 #include <vector>
+
 #include "Edge.h"
+
 class Edge;
+
 class Node {
 private:
     static unsigned int cnt; // will be initialized explicitly in Node.cpp
     int id;
     std::string expression_name;
-    std::vector< Edge *> edges;
+    std::vector<Edge *> edges;
 
 public:
-    Node( ) {
+    Node() {
         id = ++cnt;
     }
 
-    void add_edge(Edge* edge);
+    void add_edge(Edge *edge);
+
+    std::vector<Edge *> get_edges();
 
     void set_expression_name(std::string name);
 
@@ -31,7 +36,7 @@ public:
 
     int get_id();
 
-    bool operator<(const Node &other) const ;
+    bool operator<(const Node &other) const;
 };
 
 

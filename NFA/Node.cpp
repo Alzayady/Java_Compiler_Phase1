@@ -3,11 +3,11 @@
 //
 
 #include "Node.h"
+#include "Edge.h"
 
-#include <utility>
+unsigned int Node::cnt = 0;
 
-unsigned int Node::cnt =0  ;
-void Node::add_edge(Edge* edge) {
+void Node::add_edge(Edge *edge) {
     edges.push_back(edge);
 }
 
@@ -20,13 +20,17 @@ int Node::get_id() {
 }
 
 void Node::set_expression_name(std::string name) {
-    this->expression_name = std::move(name);
+    this->expression_name = name;
 }
 
 std::string Node::get_expression_name() {
     return expression_name;
 }
 
-bool Node::operator<(const Node &other ) const {
-    return (this->id) < (other.id)  ;
+bool Node::operator<(const Node &other) const {
+    return (this->id) < (other.id);
+}
+
+std::vector<Edge *> Node::get_edges() {
+    return edges;
 }

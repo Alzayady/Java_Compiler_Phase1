@@ -3,6 +3,8 @@
 //
 
 #include "Edge.h"
+#include "Node.h"
+
 Node* Edge::get_node() {
     return node;
 }
