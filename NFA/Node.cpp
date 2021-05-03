@@ -2,7 +2,7 @@
 // Created by Manfi on 05/03/21.
 //
 
-#include "Edge.h"
+#include "Node.h"
 
 unsigned int Node::cnt = 0;
 
@@ -19,7 +19,7 @@ int Node::get_id() {
 }
 
 void Node::set_expression_name(std::string name) {
-    this->expression_name = std::move(name);
+    this->expression_name = name;
 }
 
 std::string Node::get_expression_name() {

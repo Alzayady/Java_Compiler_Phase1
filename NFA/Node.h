@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 
-class Edge;
+#include "Edge.h"
 
 class Node {
 private:

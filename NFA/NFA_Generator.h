@@ -13,8 +13,9 @@ class NFA_Generator {
 private:
     std::vector<Graph*> expressions;
 public:
-    void add_expression(std::string name, std::string expression);
+    void add_expression(std::string name, std::string& expression);
     void go();
+    Graph* to_NFA(std::string& expression);
     Node* combine();
 };
 

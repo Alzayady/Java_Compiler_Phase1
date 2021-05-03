@@ -3,6 +3,7 @@
 //
 
 #include "Graph.h"
+#include <unordered_set>
 
 Node* Graph::get_start() {
     return start;
@@ -30,7 +31,7 @@ void Graph::concatenate_with(Graph *graph) {
     end = graph->get_end();
 }
 
-void Graph::Kleene_closure() {
+void Graph::kleene_closure() {
     get_end()->add_edge(new Edge(get_start(), LAMBDA));
 
     Node* new_start = new Node;
@@ -45,12 +46,15 @@ void Graph::Kleene_closure() {
 }
 
 void Graph::print() {
-    std::queue<Node*> q; q.push(start);
+    std::queue<Node*> q; q.push(start); std::unordered_set<Edge*> vis;
     while(not q.empty()) {
         Node* f = q.front(); q.pop();
         for(Edge* edge: f->get_edges()) {
-            std::cout << f->get_id() << " " << edge->get_name() << " " << edge->get_node()->get_id() << std::endl;
-            q.push(edge->get_node());
+            if (vis.find(edge) == vis.end()) {
+                std::cout << f->get_id() << " " << edge->get_name() << " " << edge->get_node()->get_id() << std::endl;
+                q.push(edge->get_node());
+                vis.insert(edge);
+            }
         }
     }
 }
