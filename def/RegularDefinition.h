@@ -38,16 +38,6 @@ class RegularDefinition
         {
             return type;
         }
-        void add_to_all_possible_chars(vector<char> elements)
-        {
-            for (int i = 0; i < elements.size(); i++) {
-                all_possible_chars.push_back(elements[i]);
-            }
-        }
-        vector<char> get_to_all_possible_chars()
-        {
-            return all_possible_chars;
-        }
         bool operator < (RegularDefinition rd) {
             return (rd.get_type().size() < type.size());
         }
@@ -55,6 +45,5 @@ class RegularDefinition
     private:
         string value;
         string type;
-        vector<char> all_possible_chars;
 };
 #endif

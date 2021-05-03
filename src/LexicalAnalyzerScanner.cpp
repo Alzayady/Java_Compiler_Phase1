@@ -101,7 +101,6 @@ void LexicalAnalyzerScanner::extract_regular_definition(string line)
         end_index = or_operators_indices[j];
         vector<char> elements = extract_elements_of_redef(redef_value, start_index, end_index);
         update_regular_definition_value(redef, redef_value, elements, start_index);
-        redef.add_to_all_possible_chars(elements);
 
         start_index = end_index + 1;
         /*
@@ -111,7 +110,6 @@ void LexicalAnalyzerScanner::extract_regular_definition(string line)
         {
             elements = extract_elements_of_redef(redef_value, start_index, redef_value.size());
             update_regular_definition_value(redef, redef_value, elements, start_index);
-            redef.add_to_all_possible_chars(elements);
         }
     }
     add_to_regular_definitions(redef);
