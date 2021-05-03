@@ -3,7 +3,6 @@
 //
 
 #include "Graph.h"
-#include <queue>
 
 Node* Graph::get_start() {
     return start;

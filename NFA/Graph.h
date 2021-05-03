@@ -6,7 +6,7 @@
 #define PROJECT_GRAPH_H
 
 #include "Edge.h"
-#include "Node.h"
+#include <queue>
 
 class Graph {
 private:

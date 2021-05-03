@@ -2,9 +2,9 @@
 // Created by Manfi on 05/03/21.
 //
 
-#include "Node.h"
+#include "Edge.h"
 
-#include <utility>
+unsigned int Node::cnt = 0;
 
 void Node::add_edge(Edge* edge) {
     edges.push_back(edge);

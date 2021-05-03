@@ -7,11 +7,12 @@
 
 #include <iostream>
 #include <vector>
-#include "Edge.h"
+
+class Edge;
 
 class Node {
 private:
-    static unsigned int cnt = 0;
+    static unsigned int cnt;
     int id;
     std::string expression_name;
 
@@ -19,7 +20,7 @@ private:
 
 public:
     Node() {
-        id = ++cnt;
+        id = cnt++;
     }
     void add_edge(Edge* edge);
     std::vector<Edge*> get_edges();
