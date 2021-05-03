@@ -32,8 +32,10 @@ void LexicalAnalyzerScanner::scan_input(string file_name)
 
         }
     }
-    convert_strings_to_regular_expressions(keywords);
+    reverse(regular_expressions.begin(), regular_expressions.end());
     convert_strings_to_regular_expressions(punctuations);
+    convert_strings_to_regular_expressions(keywords);
+    reverse(regular_expressions.begin(), regular_expressions.end());
     input_file.close();
 }
 void LexicalAnalyzerScanner::write_output()
@@ -82,8 +84,6 @@ string LexicalAnalyzerScanner::remove_spaces(string line)
 }
 void LexicalAnalyzerScanner::convert_strings_to_regular_expressions(vector<string> words)
 {
-    cout << "words Regular Expressions" <<endl;
-    cout << "Type\t\tValue" <<endl;
     vector<RegularExpression>  res;
     for(int i = 0; i < words.size(); i++)
     {
@@ -100,7 +100,6 @@ void LexicalAnalyzerScanner::convert_strings_to_regular_expressions(vector<strin
         }
         value.append(")");
         re.set_value(value);
-        cout << re.get_type() + "\t" + re.get_value() <<endl;
         add_to_regular_expressions(re);
     }
 }
@@ -327,13 +326,20 @@ string res_value = regex_value;
     while ((index = res_value.find("\\L", last_found)) < res_value.size())
     {
         // DO NOTHONG UNTIL ANY UPDATES
-        last_found = index + 1;
+        last_found = index + 2;
     }
 
     last_found = 0;
     while ((index = res_value.find("\\", last_found)) < res_value.size())
     {
-        res_value.replace(index, 1, "" );
+        if(index<res_value.size()-1 && res_value[index+1]=='L')
+        {
+            //do nothing
+        }
+        else
+        {
+            res_value.replace(index, 1, "" );
+        }
         last_found = index + 1;
     }
 
