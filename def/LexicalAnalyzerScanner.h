@@ -49,7 +49,6 @@ class LexicalAnalyzerScanner
         }
 
     private: 
-        char conc_operator = '&';
         vector<string> keywords;
         vector<string> punctuations;
         vector<RegularDefinition> regular_definitions;
@@ -69,6 +68,7 @@ class LexicalAnalyzerScanner
         string handle_special_symbols(string regex_value);
         string handle_special_cases(string regex_value);
         string add_backslash_before_symbol(string line, string symbol);
-        string add_concatination_symbol(string line, int st, int length);
+        string add_concatenation_symbol(string line, int st, int length);
+        void convert_strings_to_regular_expressions(vector<string> words);
 };
 #endif

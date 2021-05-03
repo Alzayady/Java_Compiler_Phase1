@@ -32,6 +32,8 @@ void LexicalAnalyzerScanner::scan_input(string file_name)
 
         }
     }
+    convert_strings_to_regular_expressions(keywords);
+    convert_strings_to_regular_expressions(punctuations);
     input_file.close();
 }
 void LexicalAnalyzerScanner::write_output()
@@ -77,6 +79,30 @@ string LexicalAnalyzerScanner::remove_spaces(string line)
         pos = index + 1;        // or just index without adding 1??
     }
     return str;
+}
+void LexicalAnalyzerScanner::convert_strings_to_regular_expressions(vector<string> words)
+{
+    cout << "words Regular Expressions" <<endl;
+    cout << "Type\t\tValue" <<endl;
+    vector<RegularExpression>  res;
+    for(int i = 0; i < words.size(); i++)
+    {
+        RegularExpression re;
+        string word = words[i], value="(";
+        re.set_type(word);
+        for(int j = 0; j< word.size(); j++)
+        {
+            value = value + word[j];
+            if(word[j]=='\\' &&!(j>0 && word[j-1]=='\\'))
+                continue;
+            if(j != word.size()-1)
+                value.append("&");
+        }
+        value.append(")");
+        re.set_value(value);
+        cout << re.get_type() + "\t" + re.get_value() <<endl;
+        add_to_regular_expressions(re);
+    }
 }
 void LexicalAnalyzerScanner::extract_regular_definition(string line)
 {
@@ -296,26 +322,171 @@ string LexicalAnalyzerScanner::replace_regular_definitions(string line, string r
 }
 string LexicalAnalyzerScanner::handle_special_symbols(string regex_value)
 {
+string res_value = regex_value;
+    int index =0, last_found = 0;
+    while ((index = res_value.find("\\L", last_found)) < res_value.size())
+    {
+        // DO NOTHONG UNTIL ANY UPDATES
+        last_found = index + 1;
+    }
 
+    last_found = 0;
+    while ((index = res_value.find("\\", last_found)) < res_value.size())
+    {
+        res_value.replace(index, 1, "" );
+        last_found = index + 1;
+    }
+
+    if (!has_definitions)
+    {
+        res_value = add_backslash_before_symbol(res_value, "*");
+        //res_value = add_backslash_before_symbol(res_value, "+");
+        res_value = add_backslash_before_symbol(res_value, "&");
+        last_found = 0;
+        while ((index = res_value.find("|", last_found)) < res_value.size()) {
+            if (index - last_found > 1){
+                res_value = add_concatenation_symbol(res_value, last_found, index - last_found);
+            }
+            last_found = index + 1;
+        }
+        if (last_found != 0){
+            res_value = add_concatenation_symbol(res_value, last_found, res_value.size() - last_found + 1);
+        }
+    }
+    return res_value;
 }
 string LexicalAnalyzerScanner::handle_special_cases(string regex_value)
 {
+    string res_value = regex_value;
+    int index = 0, last_found = 0;
+    while ((index = res_value.find("&)", last_found)) < res_value.size())
+    {
+        res_value.replace(index, 2, ")");
+        last_found = index + 1;
+    }
 
+    last_found = 0;
+    while ((index = res_value.find("&*", last_found)) < res_value.size())
+    {
+        res_value.replace(index, 2, "*");
+        last_found = index + 1;
+    }
+
+    last_found = 0;
+    while ((index = res_value.find("&|", last_found)) < res_value.size())
+    {
+        res_value.replace(index, 2, "|");
+        last_found = index + 1;
+    }
+
+    /*
+        ex. )(--> )&(
+    */
+    string temp = res_value;
+    for (int i = 1; i < temp.size(); i++)
+    {
+        if (temp[i] == '(')
+        {
+            if (temp[i - 1] != '(' && temp[i - 1] != '|' && temp[i - 1] != '&')
+            {
+                res_value = "";
+                for (int j = 0; j < i; j++)
+                {
+                    res_value.push_back(temp[j]);
+                }
+                res_value.push_back('&');
+                for (int j = i; j <  temp.size(); j++)
+                {
+                    res_value.push_back(temp[j]);
+                }
+                temp = res_value;
+           }
+        }
+        if (temp[i] == ')' && i !=  temp.size() - 1)
+        {
+            if (temp[i + 1] != '|' && temp[i + 1] != '*' && temp[i + 1] != '&'  && temp[i + 1] != ')')
+            {
+                res_value = "";
+                for (int j = 0; j <= i; j++)
+                {
+                    res_value.push_back(temp[j]);
+                }
+                res_value.push_back('&');
+                for (int j = i + 1; j <  temp.size(); j++)
+                {
+                    res_value.push_back(temp[j]);
+                }
+                temp = res_value;
+           }
+        }
+    }
+
+    /*
+        ex. A*() ---> A*&()
+    */
+    last_found = 0;
+    while ((index = res_value.find("*(", last_found)) < res_value.size())
+    {
+        string left = res_value.substr(0, index);
+        string right = res_value.substr(index + 1, res_value.size() - index - 1);
+        res_value = left + "*&" + right;
+        last_found = index + 2;
+    }
+
+    /*
+        ex. A*B ---> A*&B
+    */
+    last_found = 0;
+    while ((index = res_value.find("*", last_found)) < res_value.size())
+    {
+        if (index !=  res_value.size() - 1){
+            if (res_value[index + 1] != ')' && res_value[index + 1] != '|' && res_value[index + 1] != '&'){
+                string left = res_value.substr(0, index + 1);
+                string right = res_value.substr(index + 1, res_value.size() - index - 1);
+                res_value = left + "&" + right;
+            }
+        }
+        last_found = index + 1;
+    }
+
+    /*
+        ex. A& --> A
+    */
+    if (res_value[res_value.size() - 1] == '&') {
+        res_value.replace(res_value.size() - 1, 1, "");
+    }
+
+    return res_value;
 }
-string LexicalAnalyzerScanner::add_concatination_symbol(string line, int st, int length)
+string LexicalAnalyzerScanner::add_backslash_before_symbol(string line, string symbol)
+{
+    string res_str = line;
+    int index =0, last_found = 0;
+    while ((index = res_str.find(symbol, last_found)) < res_str.size())
+    {
+        res_str.replace(index, 1, "\\" + symbol );
+        last_found = index + 2;
+    }
+    return res_str;
+}
+/*
+    ex. ==|!=|>|>=|<|<= ---> =&=|!&=|>|>&=|<|<&=
+*/
+string LexicalAnalyzerScanner::add_concatenation_symbol(string line, int st, int length)
 {
     string str = line;
-    int pos = st;
-    int i = length - 1;
-    while (i > 0){
-        string LHS = str.substr(0, pos - 0 + 1);
-        if (LHS[LHS.size() - 1] == '\\') {
+    int index = st, i = length - 1;
+    while (i > 0)
+    {
+        string left_part = str.substr(0, index + 1);
+        if (left_part[left_part.size() - 1] == '\\')
+        {
             i--;
             continue;
         }
-        string RHS = str.substr(pos + 1, str.size() - pos);
-        str = LHS + conc_operator + RHS;
-        pos += 2;
+        string right_part = str.substr(index + 1, str.size() - index);
+        str = left_part + '&' + right_part;
+        index += 2;
         i--;
     }
     return str;
