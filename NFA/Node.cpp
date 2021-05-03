@@ -25,3 +25,7 @@ void Node::set_expression_name(std::string name) {
 std::string Node::get_expression_name() {
     return expression_name;
 }
+
+std::vector<Edge*> Node::get_edges() {
+    return edges;
+}

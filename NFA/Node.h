@@ -22,6 +22,7 @@ public:
         id = ++cnt;
     }
     void add_edge(Edge* edge);
+    std::vector<Edge*> get_edges();
     void set_expression_name (std::string name);
     std::string get_expression_name();
     bool is_accepted();

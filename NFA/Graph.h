@@ -13,9 +13,9 @@ private:
     Node* start;
     Node* end;
 public:
-    static const char EPS = 'e';
+    static const char LAMBDA = '?';
     Graph() {
-        Graph(EPS);
+        Graph(LAMBDA);
     }
     Graph(char name) {
         start = new Node;
@@ -27,6 +27,7 @@ public:
     void union_with(Graph* graph);
     void concatenate_with(Graph* graph);
     void Kleene_closure();
+    void print();
 };
 
 

@@ -3,6 +3,7 @@
 //
 
 #include "Graph.h"
+#include <queue>
 
 Node* Graph::get_start() {
     return start;
@@ -14,32 +15,43 @@ Node* Graph::get_end() {
 
 void Graph::union_with(Graph *graph) {
     Node* new_start = new Node;
-    new_start->add_edge(new Edge(get_start(), EPS));
-    new_start->add_edge(new Edge(graph->get_start(), EPS));
+    new_start->add_edge(new Edge(get_start(), LAMBDA));
+    new_start->add_edge(new Edge(graph->get_start(), LAMBDA));
     start = new_start;
 
     Node* new_end = new Node;
-    get_end()->add_edge(new Edge(new_end, EPS));
-    graph->get_end()->add_edge(new Edge(new_end, EPS));
+    get_end()->add_edge(new Edge(new_end, LAMBDA));
+    graph->get_end()->add_edge(new Edge(new_end, LAMBDA));
 
     end = new_end;
 }
 
 void Graph::concatenate_with(Graph *graph) {
-    end->add_edge(new Edge(graph->get_start(), EPS));
+    end->add_edge(new Edge(graph->get_start(), LAMBDA));
     end = graph->get_end();
 }
 
 void Graph::Kleene_closure() {
-    get_end()->add_edge(new Edge(get_start(), EPS));
+    get_end()->add_edge(new Edge(get_start(), LAMBDA));
 
     Node* new_start = new Node;
     Node* new_end = new Node;
 
-    new_start->add_edge(new Edge(new_end, EPS));
-    new_start->add_edge(new Edge(get_start(), EPS));
-    get_end()->add_edge(new Edge(new_end, EPS));
+    new_start->add_edge(new Edge(new_end, LAMBDA));
+    new_start->add_edge(new Edge(get_start(), LAMBDA));
+    get_end()->add_edge(new Edge(new_end, LAMBDA));
 
     start = new_start;
     end = new_end;
+}
+
+void Graph::print() {
+    std::queue<Node*> q; q.push(start);
+    while(not q.empty()) {
+        Node* f = q.front(); q.pop();
+        for(Edge* edge: f->get_edges()) {
+            std::cout << f->get_id() << " " << edge->get_name() << " " << edge->get_node()->get_id() << std::endl;
+            q.push(edge->get_node());
+        }
+    }
 }
