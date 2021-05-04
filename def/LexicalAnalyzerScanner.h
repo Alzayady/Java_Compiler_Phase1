@@ -9,8 +9,9 @@ class LexicalAnalyzerScanner
 {
     public:
         bool has_definitions;
-        void scan_input(string file_name);
-        void write_output();
+        void scan_lexical_rules_file(string file_name);
+        void scan_input_program(string file_name);
+        void write_lexical_output();
         void add_to_keywords(string str)
         {
             keywords.push_back(str);

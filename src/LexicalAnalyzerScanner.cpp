@@ -1,6 +1,6 @@
 #include "../def/LexicalAnalyzerScanner.h"
 
-void LexicalAnalyzerScanner::scan_input(string file_name)
+void LexicalAnalyzerScanner::scan_lexical_rules_file(string file_name)
 {
     fstream input_file;
     input_file.open (file_name, ios::out | ios::in);
@@ -38,7 +38,30 @@ void LexicalAnalyzerScanner::scan_input(string file_name)
     reverse(regular_expressions.begin(), regular_expressions.end());
     input_file.close();
 }
-void LexicalAnalyzerScanner::write_output()
+void LexicalAnalyzerScanner::scan_input_program(string file_name)
+{
+    fstream input_file;
+    input_file.open (file_name, ios::out | ios::in);
+    string line;
+
+
+    if (input_file.is_open()){
+        while (getline(input_file, line))
+        {
+            string str = line;
+            stringstream ss(str);
+            string token;
+            while (getline(ss, token, ' '))
+            {
+                if (token == "") 
+                    continue;
+                cout << token +"\t" ;
+            }
+            cout << endl;
+        }
+    }
+}
+void LexicalAnalyzerScanner::write_lexical_output()
 {
     fstream output_file;
     output_file.open ("out_testing.txt", ios::out | ios::trunc);
