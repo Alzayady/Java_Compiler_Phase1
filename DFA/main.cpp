@@ -9,6 +9,7 @@
 #include <unordered_map>
 #include <assert.h>
 #include <sstream>
+#include <Graph.h> // need it to include the epsilon transition
 
 /**
  Custom comparator for the set I use to store the state
@@ -46,7 +47,12 @@ public:
             }
         }
     }
-
+    bool is_accepted(){
+        return accepted ;
+    }
+    Node* get_accepted_node(){
+        return accepted_node ;
+    }
     void add_transition(char input, State *next_state) {
         assert(!transition.count(input));
         transition[input] = next_state;
@@ -86,10 +92,23 @@ public:
     }
 };
 
-std::set<Node *> get_epsilon_neighbour(Node *root) {
+std::set<Node *> get_epsilon_neighbours(Node *root) {
     std::set<Node *> ans;
     ans.insert(root);
-
+    std::queue<Node *> q;
+    std::set<int> ids; // store the id of taken nodes in order not to traverse them again
+    while (!q.empty()) {
+        Node *cur = q.front();
+        q.pop();
+        for (Edge *edge : cur->get_edges()) {
+            char value = edge->get_name();
+            Node *neighbour = edge->get_node();
+            if (value == Graph::LAMBDA && !ids.count(neighbour->get_id())) {
+                ans.insert(neighbour);
+                q.push(edge->get_node());
+            }
+        }
+    }
 }
 
 std::vector<State *> construct_dfa_naive(Node *root) {
@@ -168,7 +187,8 @@ int main() {
     a[1].add_edge(&edge11);
     a[2].add_edge(&edge25);
     a[3].add_edge(&edge36);
-    construct_dfa_naive(&a[0]);
+    std::vector<State *> temp = construct_dfa_naive(&a[0]);
+    //
     std::cout << "Test 1 started" << std::endl;
     /**
      Expected Answer:
