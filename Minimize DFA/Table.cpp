@@ -90,9 +90,9 @@ int Table::input_to_column(char input) {
 }
 
 std::string Table::toString() {
-    std::string ans = "inputs ";
+    std::string ans = "inputs              "; // 20 char
     for (auto it :inputs) {
-        ans += " |";
+        ans += "|          ";
         ans += it;
     }
     ans += "\n";

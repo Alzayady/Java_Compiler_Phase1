@@ -272,4 +272,38 @@ void test4() {
     std::cout << "Test Finished " << std::endl;
 
 }
+void test5(){
+    std::cout << "Test 3 started" << std::endl;
+    std::vector<Node> a(8);
+    auto add_edge = [&](int from, int to, char name) {
+        Edge *edge01 = new Edge(&a[to], name);
+        a[from].add_edge(edge01);
 
+    };
+    add_edge(0, 1, '0');
+    add_edge(1, 2, '0');
+    add_edge(0, 3, '1');
+    add_edge(2, 4, '0');
+    add_edge(2, 2, '1');
+    add_edge(3, 5, '0');
+    add_edge(3, 2, '1');
+    add_edge(4, 6, '1');
+    add_edge(5, 7, '0');
+    add_edge(5, 3, '1');
+    add_edge(6, 5, '0');
+    add_edge(6, 2, '1');
+    add_edge(7, 4, '0');
+    add_edge(7, 3, '1');
+
+    a[1].set_expression_name("zozo");
+    a[3].set_expression_name("zozo");
+    a[4].set_expression_name("second");
+    a[5].set_expression_name("zozo");
+    a[6].set_expression_name("zozo");
+    a[7].set_expression_name("zozo");
+    test_convert(&a[0],"0110");
+}
+int main() {
+    test5();
+    return 0;
+}

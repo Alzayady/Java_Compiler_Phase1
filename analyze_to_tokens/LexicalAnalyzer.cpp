@@ -26,6 +26,7 @@ std::vector<Token *> LexicalAnalyzer::convert(std::string str) {
             }
             i++;
         }
+
         if (last_token.empty()) {
             std::string tmp_str;
             tmp_str += str[i];
@@ -49,6 +50,9 @@ std::vector<Token *> LexicalAnalyzer::convert(std::string str) {
                 i++;
             }
         }
+        cur_row = table->get_start_row();
+        last_token = "";
+        last_accepted_string ="";
 
     }
     return tokens;
