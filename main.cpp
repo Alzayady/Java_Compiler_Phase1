@@ -19,8 +19,8 @@ int main() {
     for(int i =0; i < regular_expressions.size(); i++)
     {
         RegularExpression re = regular_expressions[i];
-        string* value = &re.get_value();
-        nfa_genarator.add_expression(re.get_type(),*value);
+        string value = re.get_value();
+        nfa_genarator.add_expression(re.get_type(), value);
     }
     nfa_genarator.go();
     /*
