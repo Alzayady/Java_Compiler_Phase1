@@ -3,6 +3,7 @@
 //
 
 #include "NFA_Generator.h"
+#include <stack>
 
 #include <utility>
 
@@ -12,36 +13,56 @@ void NFA_Generator::add_expression(std::string name, std::string& expression) {
     expressions.push_back(graph);
 }
 
-Graph* play_with_parentheses(int& index, std::string& expression) {
-    Graph* graph;
-    for(; index < expression.size() && expression[index] != ')'; ++index) {
-        switch (expression[index++]) {
-            case '|':
-                graph->union_with(play_with_parentheses(index, expression));
-                break;
-            case '&':
-                graph->concatenate_with(play_with_parentheses(index, expression));
-                break;
-            case '\\':
-                if (expression[index] not_eq 'L')
-                    graph = new Graph(expression[index]);
-                else
-                    graph = new Graph(Graph::LAMBDA);
-                break;
-            case '(':
-                graph = play_with_parentheses(index,expression);
-                break;
-            default:
-                graph = new Graph(expression[--index]);
-        }
+void check_for_and_operation_or_inside_in_the_stack(char token, std::stack<Graph*>& st, std::stack<char>& symbols){
+    if (not symbols.empty() and symbols.top() == '&') {
+        st.top()->concatenate_with(new Graph(token));
+        symbols.pop();
+    } else {
+        st.push(new Graph(token));
     }
-    ++index;
-    return graph;
+}
+
+void perform_union_operation(std::stack<Graph*>& st, std::stack<char>& symbols){
+    Graph* graph = st.top(); st.pop(); symbols.pop();
+    st.top()->union_with(graph);
+}
+
+void play_with_stacks(char token, std::stack<Graph*>& st, std::stack<char>& symbols){
+    if (not symbols.empty() and symbols.top() == '\\') {
+        symbols.pop();
+        if (token == 'L') {
+            token = Graph::LAMBDA;
+        }
+        check_for_and_operation_or_inside_in_the_stack(token, st, symbols);
+    }
+    else if (token == '(' or token == '&' or token == '|' or token == '\\') {
+        symbols.push(token);
+    }
+    else if (token == ')') {
+        while(symbols.top() not_eq '(') {
+            perform_union_operation(st, symbols);
+        }
+        symbols.pop();
+    }
+    else if (token == '*') {
+        st.top()->kleene_closure();
+    } else {
+        check_for_and_operation_or_inside_in_the_stack(token, st, symbols);
+    }
 }
 
 Graph* NFA_Generator::to_NFA(std::string& expression) {
-    int index = 0;
-    return play_with_parentheses(index, expression);
+
+    std::stack<Graph*> st;
+    std::stack<char> symbols;
+    for(char token: expression) {
+        play_with_stacks(token, st, symbols);
+    }
+    while(not symbols.empty()) {
+        perform_union_operation(st, symbols);
+    }
+    return st.top();
+
 }
 
 Node * NFA_Generator::combine() {
