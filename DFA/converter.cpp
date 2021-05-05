@@ -4,17 +4,14 @@
 #include "State.h"
 
 std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
+
 std::vector<State *> construct_dfa_without_minimization(Node *root);
 
-
-
 void convert_nfa_to_dfa(Node *root) {
-    std::vector<State*> dfa = construct_dfa_without_minimization(root);
+    std::vector<State *> dfa = construct_dfa_without_minimization(root);
 
     // zayady should work here with the dfa
 }
-
-
 
 
 /**
@@ -27,6 +24,7 @@ std::set<Node *, cmp> get_epsilon_neighbours(Node *root) {
     ans.insert(root);
     std::queue<Node *> q;
     std::set<int> ids; // store the id of taken nodes in order not to traverse them again
+    q.push(root);
     while (!q.empty()) {
         Node *cur = q.front();
         q.pop();
@@ -68,6 +66,10 @@ std::vector<State *> construct_dfa_without_minimization(Node *root) {
         for (auto node : *cur->get_state_nodes()) {
             for (auto edge: node->get_edges()) {
                 char value = edge->get_name();
+                if (value == Graph::LAMBDA) {
+                    // we considered epsilon transitions previously so we don't consider them again
+                    continue;
+                }
                 std::set<Node *, cmp> neighbours = get_epsilon_neighbours(edge->get_node());
                 for (auto neighbour : neighbours) {
                     mp[value].insert(neighbour);
@@ -109,16 +111,34 @@ std::vector<State *> construct_dfa_without_minimization(Node *root) {
 }
 
 
-
-
-
-
 // uncommit if you want to test the code
-int main() {
-    std::cout << "Test 1 started" << std::endl;
+void test_sheet_1() {
+    std::cout << "Test 4 started" << std::endl;
+    std::vector<Node> a(5);
+    auto add_edge = [&](int from, int to, char name) {
+        Edge *edge01 = new Edge(&a[to], name);
+        a[from].add_edge(edge01);
+
+    };
+    add_edge(0, 1, '0');
+    add_edge(0, 2, '1');
+    add_edge(1, 0, '0');
+    add_edge(1, 2, '1');
+    add_edge(2, 0, '0');
+    add_edge(2, 3, '1');
+    add_edge(3, 4, '0');
+    add_edge(3, 4, '1');
+    add_edge(4, 4, '0');
+    add_edge(4, 2, '1');
+    std::vector<State *> temp = construct_dfa_without_minimization(&a[0]);
+    std::cout << "Test 4 finished" << std::endl;
+}
+
+void test_custom() {
+    std::cout << "Test 2 started" << std::endl;
     std::vector<Node> a(7);
-    Edge edge01(&a[1], 'a');
-    Edge edge02(&a[2], 'a');
+    Edge edge01(&a[1], Graph::LAMBDA);
+    Edge edge02(&a[2], Graph::LAMBDA);
     Edge edge03(&a[3], 'b');
     Edge edge14(&a[4], 'b');
     Edge edge25(&a[5], 'b');
@@ -135,20 +155,16 @@ int main() {
     a[2].add_edge(&edge25);
     a[3].add_edge(&edge36);
 
-    convert_nfa_to_dfa(&a[0]);
-    //
+    std::vector<State *> states = construct_dfa_without_minimization(&a[0]);
+    for (auto s : states) {
+        if (s->is_accepted()) {
+            std::cout << s->get_accepted_node()->get_id() << std::endl;
+        }
+    }
     std::cout << "Test 1 finished" << std::endl;
-    /**
-     Expected Answer:
-     [{ 1 }[a : { 2 , 3 }] [b : { 4 }] ]
-    [{ 4 }[a : { 7 }] ]
-    [{ 2 , 3 }[b : { 5 , 6 }] [a : { 2 , 3 }] ]
-    [{ 7 }]
-    [{ 5 , 6 }]
-     */
 
+}
 
-
-    // TEST THE CODE
+int main() {
     return 0;
 }
