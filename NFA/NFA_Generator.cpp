@@ -4,11 +4,14 @@
 
 #include "NFA_Generator.h"
 #include <stack>
+#include "converter.h"
 
 #include <utility>
 
 void NFA_Generator::add_expression(std::string name, std::string& expression) {
     Graph* graph = to_NFA(expression);
+    graph->print();
+    printf("-------------------\n");
     graph->get_end()->set_expression_name(name);
     expressions.push_back(graph);
 }
@@ -75,5 +78,5 @@ Node * NFA_Generator::combine() {
 
 void NFA_Generator::go() {
     Node* root = combine();
-    // call hamza method;
+    convert_nfa_to_dfa(root);
 }

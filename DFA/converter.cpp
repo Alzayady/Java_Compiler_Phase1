@@ -10,6 +10,7 @@ std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
 std::vector<State *> construct_dfa_without_minimization(Node *root);
 
 void convert_nfa_to_dfa(Node *root) {
+
     std::vector<State *> dfa = construct_dfa_without_minimization(root);
     Minimize *m = new Minimize(dfa, root);
     Table *table = m->run();
@@ -272,7 +273,3 @@ void test4() {
 
 }
 
-int main() {
-    test4();
-    return 0;
-}
