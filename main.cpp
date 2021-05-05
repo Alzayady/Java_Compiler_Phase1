@@ -2,6 +2,7 @@
 #include "./def/LexicalAnalyzerScanner.h"
 #include "./src/LexicalAnalyzerScanner.cpp"
 #include "./NFA/NFA_Generator.h"
+#include "./NFA/NFA_Generator.cpp"
 
 int main() {
     LexicalAnalyzerScanner scanner;

@@ -25,6 +25,7 @@
         "random": "cpp",
         "cmath": "cpp",
         "future": "cpp",
-        "scoped_allocator": "cpp"
+        "scoped_allocator": "cpp",
+        "stack": "cpp"
     }
 }

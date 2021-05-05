@@ -3,6 +3,10 @@
 //
 
 #include "NFA_Generator.h"
+#include "Graph.h"
+#include "Graph.cpp"
+#include "Node.cpp"
+#include "Node.h"
 #include <stack>
 
 #include <utility>

@@ -3,7 +3,6 @@
 //
 
 #include "Node.h"
-#include "Edge.h"
 
 unsigned int Node::cnt = 0;
 
