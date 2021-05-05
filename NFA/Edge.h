@@ -1,11 +1,11 @@
 //
 // Created by Manfi on 05/03/21.
 //
-
 #ifndef PROJECT_EDGE_H
 #define PROJECT_EDGE_H
 
-class Node;
+#include "Node.h"
+class Node ;
 
 class Edge {
 private:
@@ -13,7 +13,6 @@ private:
     char name;
 public:
     Edge(Node* node, char name): node(node), name(name){};
-
     Node* get_node();
     char get_name();
 };
