@@ -3,6 +3,7 @@
 //
 #include "State.h"
 #include "Minimize.h"
+#include "LexicalAnalyzer.h"
 
 std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
 
@@ -10,8 +11,19 @@ std::vector<State *> construct_dfa_without_minimization(Node *root);
 
 void convert_nfa_to_dfa(Node *root) {
     std::vector<State *> dfa = construct_dfa_without_minimization(root);
-    Minimize *m = new Minimize(dfa);
-    m->run();
+    Minimize *m = new Minimize(dfa, root);
+    Table *table = m->run();
+}
+
+void test_convert(Node *root, std::string str) {
+    std::vector<State *> dfa = construct_dfa_without_minimization(root);
+    Minimize *m = new Minimize(dfa, root);
+    Table *table = m->run();
+    LexicalAnalyzer *hamze = new LexicalAnalyzer(table);
+    std::vector<Token *> ans = hamze->convert(str);
+    for(auto it: ans){
+        std::cout<<it->toString()<<std::endl;
+    }
 }
 
 
@@ -252,7 +264,15 @@ void test_custom() {
 
 }
 
+void test4() {
+    // test 4 started
+    std::vector<Node> a(8);
+    convert_nfa_to_dfa(&a[0]);
+    std::cout << "Test Finished " << std::endl;
+
+}
+
 int main() {
-    test3();
+    test4();
     return 0;
 }

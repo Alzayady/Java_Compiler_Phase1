@@ -103,7 +103,6 @@ int Row::get_next_row_under_input(int input, State *st) {
 
 int Row::get_next_row(int column) {
     if (column == -1) {
-        // default input
         return -1;
     }
     assert(cell_vector[column].size() == 1);
