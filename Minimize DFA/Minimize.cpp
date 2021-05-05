@@ -35,7 +35,11 @@ Table *Minimize::run() {
     for (auto it : accepted_states) {
         table->add_row(it.second);
     }
-    table->add_row(not_accepted_stats);
+
+    if (!not_accepted_stats.empty())
+        table->add_row(not_accepted_stats);
+
+//    table->add_row(not_accepted_stats);
     table->init();
     return table;
 }
