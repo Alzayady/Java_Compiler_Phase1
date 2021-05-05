@@ -24,7 +24,7 @@ public:
     void union_with(Graph* graph);
     void concatenate_with(Graph* graph);
     void kleene_closure();
-    void print();
+    static void print(Node* root);
 };
 
 
