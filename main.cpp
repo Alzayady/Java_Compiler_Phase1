@@ -1,8 +1,9 @@
 #include <iostream>
 #include "NFA/Graph.h"
 #include "NFA/NFA_Generator.h"
-
+#include "LexicalAnalyzer.h"
 int main() {
+    freopen("../out.txt","w",stdout);
     std::cout << "Hello, World!" << std::endl;
     std::string input = "w&h&i&l&e";
     NFA_Generator* nfaGenerator = new NFA_Generator;

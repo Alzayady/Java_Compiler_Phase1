@@ -30,7 +30,7 @@ std::vector<Token *> LexicalAnalyzer::convert(std::string str) {
         if (last_token.empty()) {
             std::string tmp_str;
             tmp_str += str[i];
-            Token *token = new Token("ERORR", tmp_str);
+            Token *token = new Token("ERROR", tmp_str);
             token->set_Error();
             tokens.push_back(token);
             i++;

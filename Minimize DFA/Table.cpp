@@ -90,12 +90,17 @@ int Table::input_to_column(char input) {
 }
 
 std::string Table::toString() {
-    std::string ans = "inputs              "; // 20 char
+    std::string ans = "inputs | random node id "; // 20 char
     for (auto it :inputs) {
         ans += "|          ";
         ans += it;
+        ans += "        ";
+
     }
+
     ans += "\n";
+    ans+=std::string(ans.size(),'_');
+    ans+="\n";
     for (auto it: Rows) {
         ans += it->toString();
         ans += "\n";

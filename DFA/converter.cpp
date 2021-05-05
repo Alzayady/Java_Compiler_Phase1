@@ -14,6 +14,12 @@ void convert_nfa_to_dfa(Node *root) {
     std::vector<State *> dfa = construct_dfa_without_minimization(root);
     Minimize *m = new Minimize(dfa, root);
     Table *table = m->run();
+    LexicalAnalyzer * lexicalAnalyzer = new LexicalAnalyzer(table);
+    std::vector<Token *> ans = lexicalAnalyzer->convert("while()while()44;");
+
+    for(auto it: ans){
+        std::cout<<it->toString()<<std::endl;
+    }
 }
 
 void test_convert(Node *root, std::string str) {
@@ -303,7 +309,7 @@ void test5(){
     a[7].set_expression_name("zozo");
     test_convert(&a[0],"0110");
 }
-int main() {
-    test5();
-    return 0;
-}
+//int main() {
+//    test5();
+//    return 0;
+//}
