@@ -30,6 +30,9 @@ void perform_union_operation(std::stack<Graph*>& st, std::stack<char>& symbols){
 void play_with_stacks(char token, std::stack<Graph*>& st, std::stack<char>& symbols){
     if (not symbols.empty() and symbols.top() == '\\') {
         symbols.pop();
+        if (token == 'L') {
+            token = Graph::LAMBDA;
+        }
         check_for_and_operation_or_inside_in_the_stack(token, st, symbols);
     }
     else if (token == '(' or token == '&' or token == '|' or token == '\\') {
