@@ -110,7 +110,6 @@ std::vector<State *> construct_dfa_without_minimization(Node *root) {
     return state_space;
 }
 
-
 // uncommit if you want to test the code
 void test_sheet_1() {
     std::cout << "Test 4 started" << std::endl;
@@ -133,7 +132,6 @@ void test_sheet_1() {
     std::vector<State *> temp = construct_dfa_without_minimization(&a[0]);
     std::cout << "Test 4 finished" << std::endl;
 }
-
 void test_custom() {
     std::cout << "Test 2 started" << std::endl;
     std::vector<Node> a(7);
@@ -166,5 +164,6 @@ void test_custom() {
 }
 
 int main() {
+    test_custom() ;
     return 0;
 }
