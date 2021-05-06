@@ -3,7 +3,6 @@
 //
 
 #include "Graph.h"
-#include "Edge.cpp"
 #include <unordered_set>
 
 Node* Graph::get_start() {

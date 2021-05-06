@@ -1,15 +1,14 @@
-#include "./def/Imports.h"
-#include "./def/LexicalAnalyzerScanner.h"
-#include "./src/LexicalAnalyzerScanner.cpp"
-#include "./NFA/NFA_Generator.h"
-#include "./NFA/NFA_Generator.cpp"
+#include "Imports.h"
+#include "LexicalAnalyzerScanner.h"
+#include "NFA_Generator.h"
 
 int main() {
+    freopen("../out.txt", "w", stdout);
     LexicalAnalyzerScanner scanner;
     /*
         reading lexical rules
     */
-    scanner.scan_lexical_rules_file("lexical_rules.txt");
+    scanner.scan_lexical_rules_file("../lexical_rules.txt");
     scanner.write_lexical_output();
     /*
         generating NFA out of regular expressions
@@ -23,7 +22,8 @@ int main() {
         string value = re.get_value();
         nfa_genarator.add_expression(re.get_type(), value);
     }
-    nfa_genarator.go();
+    LexicalAnalyzer* lexicalAnalyzer = nfa_genarator.go();
+    lexicalAnalyzer->convert("while()while()44;");
     /*
         converting NFA to its equivalent DFA
     */
@@ -33,7 +33,7 @@ int main() {
     /*
         reading programs to be tested
     */
-    scanner.scan_input_program("testing_program.txt");
-    cout << "DONE!" << std::endl;
+    // scanner.scan_input_program("../testing_program.txt");
+    // cout << "DONE!" << std::endl;
     return 0;
 }

@@ -5,6 +5,7 @@
 #define PROJECT_EDGE_H
 
 #include "Node.h"
+
 class Node ;
 
 class Edge {

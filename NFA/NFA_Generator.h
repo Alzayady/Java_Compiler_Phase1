@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include "GraphAdapter.h"
 #include "Graph.h"
 #include "Node.h"
 
@@ -15,7 +16,7 @@ private:
     std::vector<Graph*> expressions;
 public:
     void add_expression(std::string name, std::string& expression);
-    void go();
+    LexicalAnalyzer* go();
     Graph* to_NFA(std::string& expression);
     Node* combine();
 };
