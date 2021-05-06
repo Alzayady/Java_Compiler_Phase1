@@ -20,6 +20,7 @@ void Table::init() {
     this->init_all_rows();
     bool need_split = true;
     while (need_split) {
+        this->start_row = idToRow[this->root_id];
         std::cout << toString() << std::endl;
         need_split = false;
         for (Row *row : this->Rows) {

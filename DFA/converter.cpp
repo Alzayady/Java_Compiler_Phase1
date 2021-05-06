@@ -28,7 +28,7 @@ void test_convert(Node *root, std::string str) {
     Table *table = m->run();
     LexicalAnalyzer *hamze = new LexicalAnalyzer(table);
     std::vector<Token *> ans = hamze->convert(str);
-    for(auto it: ans){
+    for(Token *  it: ans){
         std::cout<<it->toString()<<std::endl;
     }
 }
