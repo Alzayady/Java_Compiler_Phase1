@@ -1,17 +1,51 @@
+/* Declarations */
+
 %{
-    // Definitions
+	#include <stdio.h>
 %}
-  
+
+/* regular definitions */
+
+letter  [A-Za-z]
+digit   [0-9]
+id      ({letter})({letter}|{digit})*
+digits  {digit}+
+num     {digit}+|(({digit}+).({digits})((E)({digits})))
+relop   ["=="|"!="|">"|">="|"<"|"<="]
+addop   [+|-]
+mulop   [*|/]
+assign  (=)
+boolean (b)(o){2}(l)(e)(a)(n)
+
+
+/* Rules */
+
 %%
-[a-zA-Z]([a-zA-Z]|[0-9])* {printf("id\n")}
-digit+ | digit+ . digits ( \L | E digits) {printf("num\n")}
-(==|!=|>|>=|<|<=) {printf("relop\n")}
-= {printf("assign\n")}
-\+|- {printf("addop\n")}
-\*|/ [a-zA-Z]([a-zA-Z]|[0-9])* {printf("mulop\n")}
-\n    {return 0;}
+
+(boolean) {printf("boolean\n");}
+(int)     {printf("int\n");}
+(float)   {printf("float\n");}
+(if)      {printf("if\n");}
+(else)    {printf("else\n");}
+(while)   {printf("while\n");}
+{assign}  {printf("assign\n");}
+
+{num}     {printf("num\n");}
+{id}      {printf("id\n");}
+{relop}   {printf("relop\n");}
+{addop}   {printf("addop\n");}
+{mulop}   {printf("mulop\n");}
+
+
+"("       {printf("(\n");}
+")"       {printf(")\n");}
+"{"       {printf("{\n");}
+"}"       {printf("}\n");}
+";"       {printf(";\n");}
+","       {printf(",\n");}
+
 %%
-  
+
 int yywrap(){}
 int main(){
   
@@ -23,12 +57,8 @@ int main(){
             which runs the Rule Section*/
     // yytext is the text in the buffer
     
-    // Uncomment the lines below 
-    // to take input from file
     FILE *fp;
-    char filename[50];
-    printf("Enter the filename: \n");
-    scanf("%s",filename);
+    char filename[50] = "testing_program.txt";
     fp = fopen(filename,"r");
     yyin = fp;
     
