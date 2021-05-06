@@ -4,7 +4,7 @@
 
 #include "NFA_Generator.h"
 #include <stack>
-#include "converter.h"
+#include "GraphAdapter.h"
 
 #include <utility>
 
@@ -87,5 +87,6 @@ void NFA_Generator::go() {
     printf("Final NFA graph\n");
     Graph::print(root);
     printf("End of Manfy work b7bkoooooo\n\n");
-    convert_nfa_to_dfa(root);
+    GraphAdapter ga ;
+    ga.get_lexical_analyzer(root) ;
 }
