@@ -112,7 +112,16 @@ int Row::get_next_row(int column) {
 std::string Row::toString() {
     std::string str;
     str+= char (this->getRowNumber()+'0');
-    str+=" )    |    ";
+    if(this->table->get_start_row()== this->getRowNumber()){
+        str+=" ) <--|";
+    }else{
+        str+=" )    |";
+    }
+    int dif = 11 - str.size();
+    while (dif>=0){
+        dif--;
+        str+=" ";
+    }
     for(State *  it : states){
         int n = ( *it->get_state_nodes()->begin())->get_id();
         std::stringstream ss;
