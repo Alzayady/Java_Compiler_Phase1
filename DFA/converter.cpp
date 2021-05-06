@@ -1,7 +1,6 @@
 //
 // Created by Hamza  on 5/4/2021.
 //
-#include "State.h"
 #include "Minimize.h"
 
 std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
@@ -251,8 +250,15 @@ void test_custom() {
     std::cout << "Test 1 finished" << std::endl;
 
 }
+void test4() {
+    // test 4 started
+    std::vector<Node> a(8);
+    convert_nfa_to_dfa(&a[0]);
+    std::cout << "Test Finished " << std::endl;
 
+
+}
 int main() {
-    test3();
+    test4();
     return 0;
 }
