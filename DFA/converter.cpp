@@ -1,16 +1,36 @@
 //
 // Created by Hamza  on 5/4/2021.
 //
+#include "State.h"
 #include "Minimize.h"
+#include "LexicalAnalyzer.h"
 
 std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
 
 std::vector<State *> construct_dfa_without_minimization(Node *root);
 
 void convert_nfa_to_dfa(Node *root) {
+
     std::vector<State *> dfa = construct_dfa_without_minimization(root);
-    Minimize *m = new Minimize(dfa);
-    m->run();
+    Minimize *m = new Minimize(dfa, root);
+    Table *table = m->run();
+    LexicalAnalyzer * lexicalAnalyzer = new LexicalAnalyzer(table);
+    std::vector<Token *> ans = lexicalAnalyzer->convert("while()while()44;");
+
+    for(auto it: ans){
+        std::cout<<it->toString()<<std::endl;
+    }
+}
+
+void test_convert(Node *root, std::string str) {
+    std::vector<State *> dfa = construct_dfa_without_minimization(root);
+    Minimize *m = new Minimize(dfa, root);
+    Table *table = m->run();
+    LexicalAnalyzer *hamze = new LexicalAnalyzer(table);
+    std::vector<Token *> ans = hamze->convert(str);
+    for(auto it: ans){
+        std::cout<<it->toString()<<std::endl;
+    }
 }
 
 
@@ -250,15 +270,46 @@ void test_custom() {
     std::cout << "Test 1 finished" << std::endl;
 
 }
+
 void test4() {
     // test 4 started
     std::vector<Node> a(8);
     convert_nfa_to_dfa(&a[0]);
     std::cout << "Test Finished " << std::endl;
 
+}
+void test5(){
+    std::cout << "Test 3 started" << std::endl;
+    std::vector<Node> a(8);
+    auto add_edge = [&](int from, int to, char name) {
+        Edge *edge01 = new Edge(&a[to], name);
+        a[from].add_edge(edge01);
 
+    };
+    add_edge(0, 1, '0');
+    add_edge(1, 2, '0');
+    add_edge(0, 3, '1');
+    add_edge(2, 4, '0');
+    add_edge(2, 2, '1');
+    add_edge(3, 5, '0');
+    add_edge(3, 2, '1');
+    add_edge(4, 6, '1');
+    add_edge(5, 7, '0');
+    add_edge(5, 3, '1');
+    add_edge(6, 5, '0');
+    add_edge(6, 2, '1');
+    add_edge(7, 4, '0');
+    add_edge(7, 3, '1');
+
+    a[1].set_expression_name("zozo");
+    a[3].set_expression_name("zozo");
+    a[4].set_expression_name("second");
+    a[5].set_expression_name("zozo");
+    a[6].set_expression_name("zozo");
+    a[7].set_expression_name("zozo");
+    test_convert(&a[0],"0110");
 }
-int main() {
-    test4();
-    return 0;
-}
+//int main() {
+//    test5();
+//    return 0;
+//}

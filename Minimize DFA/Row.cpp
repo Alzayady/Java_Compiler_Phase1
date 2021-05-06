@@ -103,7 +103,6 @@ int Row::get_next_row_under_input(int input, State *st) {
 
 int Row::get_next_row(int column) {
     if (column == -1) {
-        // default input
         return -1;
     }
     assert(cell_vector[column].size() == 1);
@@ -113,23 +112,42 @@ int Row::get_next_row(int column) {
 std::string Row::toString() {
     std::string str;
     str+= char (this->getRowNumber()+'0');
-    for(auto it : states){
-        str+=it->to_string();
+    str+=" )    |    ";
+    for(State *  it : states){
+        int n = ( *it->get_state_nodes()->begin())->get_id();
+        std::stringstream ss;
+        ss<<n;
+        std::string temp = ss.str();
+        str+=temp;
+        break;
+    }
+    int sp = 23 - str.size();
+    while (sp>0){
+        str+=" ";
+        sp--;
     }
     for(auto it :this->cell_vector){
-        str+=" |  ";
+        std::string temp ;
+        temp+=" |  ";
         for(auto itt : it){
             if(itt == -1){
-                str+=" -1 ,";
+                temp+=" -1 ,";
                 continue;
             }
-            str+= "  " ;
-            str+= char (itt+'0');
-            str+= " , ";
+            temp+= "  " ;
+            temp+= char (itt+'0');
+            temp+= " , ";
         }
+        temp.pop_back();
+        temp.pop_back();
+        sp =20-temp.size();
+        while (sp--){
+            temp+=" ";
+        }
+        str+=temp;
     }
     if(this->isAccepted()){
-        str+="   i am accepted " + this->get_expression_name();
+        str+="  Accepted name :  " + this->get_expression_name();
     }
     return str;
 

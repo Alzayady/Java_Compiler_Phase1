@@ -13,9 +13,9 @@ class Minimize {
 private:
     std::vector<State *> graph;
 public:
-    Minimize(std::vector<State *> graph);
-
+    Minimize(std::vector<State *> graph, Node * root);
     Table * run();
+    int id_root;
 };
 
 

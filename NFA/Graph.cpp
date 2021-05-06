@@ -45,8 +45,8 @@ void Graph::kleene_closure() {
     end = new_end;
 }
 
-void Graph::print() {
-    std::queue<Node*> q; q.push(start); std::unordered_set<Edge*> vis;
+void Graph::print(Node* root) {
+    std::queue<Node*> q; q.push(root); std::unordered_set<Edge*> vis;
     while(not q.empty()) {
         Node* f = q.front(); q.pop();
         for(Edge* edge: f->get_edges()) {

@@ -1,12 +1,10 @@
 //
-// Created by KING on 5/5/2021.
+// Created by Manfi on 05/06/21.
 //
 
-#ifndef JAVA_COMPILER_CONVERTER_H
-#define JAVA_COMPILER_CONVERTER_H
+#ifndef PROJECT_CONVERTER_H
+#define PROJECT_CONVERTER_H
 
-#include "State.h"
-void convert_nfa_to_dfa(Node* r ) ;
+void convert_nfa_to_dfa(Node *root);
 
-#endif //JAVA_COMPILER_CONVERTER_H
-
+#endif //PROJECT_CONVERTER_H
