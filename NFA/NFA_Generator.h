@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include "Graph.h"
+#include "Node.h"
 
 class NFA_Generator {
 private:
