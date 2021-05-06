@@ -20,9 +20,9 @@ private:
     std::vector<Edge *> edges;
 
 public:
-    Node() {
-        id = ++cnt;
-    }
+    Node();
+
+    ~Node();
 
     void add_edge(Edge *edge);
 

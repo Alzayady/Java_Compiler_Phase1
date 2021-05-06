@@ -12,9 +12,14 @@ class Edge {
 private:
     Node* node;
     char name;
+
 public:
     Edge(Node* node, char name): node(node), name(name){};
+
+    ~Edge(){};
+
     Node* get_node();
+
     char get_name();
 };
 

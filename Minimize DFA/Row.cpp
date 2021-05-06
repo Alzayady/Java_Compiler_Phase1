@@ -4,7 +4,7 @@
 
 #include <cassert>
 #include "Row.h"
-#include "../DFA/State.h"
+
 
 Row::Row(int rowNumber) {
     this->rowNumber = rowNumber;

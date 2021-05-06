@@ -3,7 +3,6 @@
 //
 
 #include "Minimize.h"
-#include "Table.h"
 
 Minimize::Minimize(std::vector<State *> graph, Node *root) {
     this->graph = graph;

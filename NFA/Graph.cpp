@@ -3,7 +3,14 @@
 //
 
 #include "Graph.h"
+#include <queue>
 #include <unordered_set>
+
+Graph::Graph(char name) {
+    start = new Node;
+    end = new Node;
+    start->add_edge(new Edge(end, name));
+}
 
 Node* Graph::get_start() {
     return start;
@@ -11,6 +18,10 @@ Node* Graph::get_start() {
 
 Node* Graph::get_end() {
     return end;
+}
+
+void Graph::delete_graph(Graph* graph) {
+    delete graph;
 }
 
 void Graph::union_with(Graph *graph) {
@@ -24,11 +35,13 @@ void Graph::union_with(Graph *graph) {
     graph->get_end()->add_edge(new Edge(new_end, LAMBDA));
 
     end = new_end;
+    Graph::delete_graph(graph);
 }
 
 void Graph::concatenate_with(Graph *graph) {
     end->add_edge(new Edge(graph->get_start(), LAMBDA));
     end = graph->get_end();
+    Graph::delete_graph(graph);
 }
 
 void Graph::kleene_closure() {

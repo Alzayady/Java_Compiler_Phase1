@@ -77,7 +77,9 @@ Node * NFA_Generator::combine() {
     Node* root = new Node;
     for(Graph* expression: expressions) {
         root->add_edge(new Edge(expression->get_start(), Graph::LAMBDA));
+        Graph::delete_graph(expression);
     }
+    expressions.clear();
     return root;
 }
 
@@ -89,5 +91,5 @@ LexicalAnalyzer* NFA_Generator::go() {
         printf("End of Manfy work b7bkoooooo\n\n");
     }
     GraphAdapter ga ;
-    return ga.get_lexical_analyzer(root) ;
+    return ga.get_lexical_analyzer(root);
 }

@@ -6,6 +6,16 @@
 
 unsigned int Node::cnt = 0;
 
+Node::Node() {
+    id = ++cnt;
+}
+
+Node::~Node() {
+    for(Edge* edge: edges) {
+        delete edge;
+    }
+}
+
 void Node::add_edge(Edge *edge) {
     edges.push_back(edge);
 }
