@@ -4,9 +4,11 @@
 
 #include "Minimize.h"
 #include "Table.h"
+#include "Table.cpp"
 
-Minimize::Minimize(std::vector<State *> graph) {
+Minimize::Minimize(std::vector<State *> graph, Node *root) {
     this->graph = graph;
+    this->id_root = root->get_id();
 }
 
 Table *Minimize::run() {
@@ -31,11 +33,12 @@ Table *Minimize::run() {
         }
     }
     std::vector<std::vector<State * >> rows;
-    Table *table = new Table(inputs);
+    Table *table = new Table(inputs, this->id_root);
     for (auto it : accepted_states) {
         table->add_row(it.second);
     }
-    table->add_row(not_accepted_stats);
+    if (!not_accepted_stats.empty())
+        table->add_row(not_accepted_stats);
     table->init();
     return table;
 }

@@ -5,14 +5,14 @@
 #ifndef JAVA_COMPILER_STATE_H
 #define JAVA_COMPILER_STATE_H
 
-#include <Node.h>
+#include "../NFA/Node.h"
 #include <set>
 #include <queue>
 #include <map>
 #include <unordered_map>
 #include <assert.h>
 #include <sstream>
-#include <Graph.h> // need it to include the epsilon transition
+#include "../NFA/Graph.h" // need it to include the epsilon transition
 
 /**
  Custom comparator for the set I use to store the state

@@ -26,6 +26,7 @@
         "cmath": "cpp",
         "future": "cpp",
         "scoped_allocator": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "unordered_set": "cpp"
     }
 }
