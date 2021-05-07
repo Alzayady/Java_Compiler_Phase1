@@ -11,14 +11,14 @@ Minimize::Minimize(std::vector<ResultState *> *graph, int id_root) {
 
     this->graph = graph;
     this->id_root = id_root;
-    cout << " ======================== " << endl;
-    cout << id_root << endl;
-    for (auto it : *graph) {
-        if (it->is_accepted()) {
-            cout << it->get_id() << endl;
-            cout << it->get_expression_name() << endl;
-        }
-    }
+//    cout << " ======================== " << endl;
+//    cout << id_root << endl;
+//    for (auto it : *graph) {
+//        if (it->is_accepted()) {
+//            cout << it->get_id() << endl;
+//            cout << it->get_expression_name() << endl;
+//        }
+//    }
 }
 
 Table *Minimize::run() {
