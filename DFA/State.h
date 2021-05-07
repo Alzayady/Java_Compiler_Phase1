@@ -50,7 +50,7 @@ public:
 
     std::string get_details();
 
-
+    ~State() ;
 
 };
 

@@ -8,7 +8,8 @@ State::State() {
     accepted = false;
     accepted_node = nullptr;
 }
-
+State::~State(){
+}
 /***
  *
  * @return vector of pointers to the equivalent nodes in the current state sorted in acsending order

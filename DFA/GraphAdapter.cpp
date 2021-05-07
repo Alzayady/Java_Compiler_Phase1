@@ -106,7 +106,7 @@ std::set<Node *, cmp> get_epsilon_neighbours(Node *root) {
  */
 std::vector<ResultState *> *construct_dfa_without_minimization(Node *root) {
     // Get all states that are reachable from the root state through an EPSILON transition (lampda transition)
-    State *initial = new State();
+    State *initial = new State() ;
     std::set<Node *, cmp> initial_states = get_epsilon_neighbours(root);
     for (auto node : initial_states) {
         initial->add_node(node);
@@ -121,6 +121,7 @@ std::vector<ResultState *> *construct_dfa_without_minimization(Node *root) {
         State *cur = q.front();
         q.pop();
         std::unordered_map<char, std::set<Node *, cmp>> mp;
+
         for (auto node : *cur->get_state_nodes()) {
             for (auto edge: node->get_edges()) {
                 char value = edge->get_name();
@@ -138,6 +139,7 @@ std::vector<ResultState *> *construct_dfa_without_minimization(Node *root) {
             char value = map_entry.first;
             std::set<Node *, cmp> possible_state = map_entry.second;
             bool repeated = false;
+
             for (int i = 0; i < (int) state_space.size(); i++) {
 
 
@@ -151,7 +153,7 @@ std::vector<ResultState *> *construct_dfa_without_minimization(Node *root) {
                 }
             }
             if (!repeated) {
-                State *new_state = new State();
+                State *new_state = new State() ;
                 for (Node *node : possible_state) {
                     new_state->add_node(node);
                 }
@@ -160,13 +162,22 @@ std::vector<ResultState *> *construct_dfa_without_minimization(Node *root) {
                 q.push(new_state);
             }
         }
+
     }
 #ifdef __DEBUGMODE
     for (int i = 0; i < (int) state_space.size(); i++) {
         std::cout << (state_space[i])->get_details() << std::endl; // for debugging
     }
 #endif
+    std::cout << "NO we finished and we are goint to compress the nodes " << std::endl;
     std::vector<ResultState *> *ans = result_state_factory(&state_space);
+
+
+    for(int i=0;i<(int)state_space.size() ;i++){
+        delete state_space[i] ;
+    }
+
+
     Node::delete_node_cascade(root);
     return ans;
 }
@@ -178,6 +189,7 @@ void test_custom() {
     for (int i = 0; i < 7; i++) {
         a[i] = (new Node());
     }
+
     Edge *edge01 = new Edge(a[1], Graph::LAMBDA);
     Edge *edge02 = new Edge(a[2], Graph::LAMBDA);
     Edge *edge03 = new Edge(a[3], 'b');
@@ -196,7 +208,7 @@ void test_custom() {
     a[2]->add_edge(edge25);
     a[3]->add_edge(edge36);
 
-
+    std::cout << "sht" << std::endl;
     construct_dfa_without_minimization(a[0]);
 //    delete(a[0]) ;
 //    for (auto s : states) {
