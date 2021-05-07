@@ -219,8 +219,3 @@ void test_custom() {
     std::cout << "Test 2 finished" << std::endl;
 
 }
-
-int main() {
-    test_custom();
-    return 0;
-}
