@@ -59,6 +59,7 @@ LexicalAnalyzer *GraphAdapter::get_lexical_analyzer(Node *root) {
     // zayady start editing here
     // zayady start editing here
     std::cout<<"fuck hamze"<<std::endl;
+    std::cout<<dfa->size()<<std::endl;
     Minimize *m = new Minimize(dfa, 0);
     Table *table = m->run();
     delete m ;
