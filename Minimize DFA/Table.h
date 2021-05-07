@@ -50,6 +50,8 @@ public:
     bool isAcceptedRow(int row);
 
     std::string getAcceptedName(int row);
+
+    void make_stable();
 };
 
 

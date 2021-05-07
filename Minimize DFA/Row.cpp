@@ -162,6 +162,12 @@ std::string Row::toString() {
 
 }
 
+void Row::make_stable() {
+     for(ResultState * resultState : states){
+         delete resultState;
+     }
+}
+
 
 
 

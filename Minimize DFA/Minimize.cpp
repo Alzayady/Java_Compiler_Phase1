@@ -4,17 +4,19 @@
 
 #include <iostream>
 #include "Minimize.h"
+
 using namespace std;
-Minimize::Minimize(std::vector<ResultState *>* graph, int id_root) {
+
+Minimize::Minimize(std::vector<ResultState *> *graph, int id_root) {
 
     this->graph = graph;
     this->id_root = id_root;
-    cout<<" ======================== "<<endl;
-    cout<<id_root<<endl;
-    for(auto it : * graph){
-        if(it->is_accepted()){
-            cout<<it->get_id()<<endl;
-            cout<<it->get_expression_name()<<endl;
+    cout << " ======================== " << endl;
+    cout << id_root << endl;
+    for (auto it : *graph) {
+        if (it->is_accepted()) {
+            cout << it->get_id() << endl;
+            cout << it->get_expression_name() << endl;
         }
     }
 }
@@ -25,7 +27,7 @@ Table *Minimize::run() {
 
     std::unordered_set<char> inputs;
 
-    for (ResultState *st : * graph) {
+    for (ResultState *st : *graph) {
 
         if (!st->is_accepted()) {
             not_accepted_stats.push_back(st);
@@ -48,5 +50,6 @@ Table *Minimize::run() {
     if (!not_accepted_stats.empty())
         table->add_row(not_accepted_stats);
     table->init();
+    table->make_stable();
     return table;
 }

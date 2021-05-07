@@ -131,3 +131,9 @@ std::string Table::getAcceptedName(int row) {
     return Rows[row]->get_expression_name();
 }
 
+void Table::make_stable() {
+    for (auto it : Rows) {
+        it->make_stable();
+    }
+}
+

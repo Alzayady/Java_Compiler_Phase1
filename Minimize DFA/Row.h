@@ -20,6 +20,7 @@ private:
     std::vector <std::vector<int>> cell_vector; // for every row , for every input , it contains the next row numbers , it may
     // contain more than next state during running , but at the end it will contain
     // only one next state , and ربنا يستر وتطلع صح
+
 public:
     Row(int rowNumber);
 
@@ -50,6 +51,8 @@ public:
 
 
     int get_next_row(int input);
+
+    void make_stable();
 
     std::string toString();
 
