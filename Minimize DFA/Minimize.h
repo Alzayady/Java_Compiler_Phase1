@@ -5,15 +5,16 @@
 #ifndef JAVA_COMPILER_MINIMIZE_H
 #define JAVA_COMPILER_MINIMIZE_H
 
+#include <ResultState.h>
 
 #include <vector>
 #include "Table.h"
 
 class Minimize {
 private:
-    std::vector<State *> graph;
+    std::vector<ResultState *> *graph;
 public:
-    Minimize(std::vector<State *> graph, Node * root);
+    Minimize(std::vector<ResultState *> *graph, int id_root);
     Table * run();
     int id_root;
 };
