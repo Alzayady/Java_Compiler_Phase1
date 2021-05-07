@@ -8,6 +8,13 @@ State::State() {
     accepted = false;
     accepted_node = nullptr;
 }
+
+State::~State() {
+    delete(accepted_node) ;
+    for(auto node : st ) {
+        delete(node);
+    }
+}
 /***
  *
  * @return vector of pointers to the equivalent nodes in the current state sorted in acsending order
@@ -75,6 +82,7 @@ std::string State::get_details() {
     ss << ']';
     return ss.str();
 }
+
 
 //
 //bool State::operator==(const State &other) const {
