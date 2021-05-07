@@ -5,7 +5,7 @@
 #include "GraphAdapter.h"
 #include "Minimize.h"
 #include "ResultState.h"
-
+#include "State.h"
 std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
 
 std::vector<ResultState *> *construct_dfa_without_minimization(Node *root);
@@ -58,10 +58,12 @@ LexicalAnalyzer *GraphAdapter::get_lexical_analyzer(Node *root) {
     // zayady start editing here
     // zayady start editing here
     // zayady start editing here
-//    Minimize *m = new Minimize(dfa, root);
-//    Table *table = m->run();
-//    LexicalAnalyzer *lexicalAnalyzer = new LexicalAnalyzer(table);
-//    return lexicalAnalyzer;
+    std::cout<<"fuck hamze"<<std::endl;
+    Minimize *m = new Minimize(dfa, 0);
+    Table *table = m->run();
+    delete m ;
+    LexicalAnalyzer *lexicalAnalyzer = new LexicalAnalyzer(table);
+    return lexicalAnalyzer;
 }
 
 
@@ -210,6 +212,7 @@ void test_custom() {
 
     std::cout << "sht" << std::endl;
     construct_dfa_without_minimization(a[0]);
+
 //    delete(a[0]) ;
 //    for (auto s : states) {
 //        if (s->is_accepted()) {
@@ -220,7 +223,8 @@ void test_custom() {
 
 }
 
-int main() {
-    test_custom();
-    return 0;
-}
+//int main() {
+//    test_custom();
+//
+//    return 0;
+//}

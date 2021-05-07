@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <iostream>
 #include "Table.h"
 #include "Row.h"
 
@@ -17,38 +18,38 @@ Table::Table(std::unordered_set<char> inputs, int root_id) {
 
 void Table::init() {
     this->update_map_converting_id_to_row();
+    this->start_row = idToRow[this->root_id];
     this->init_all_rows();
     bool need_split = true;
     while (need_split) {
-        this->start_row = idToRow[this->root_id];
-        std::cout << toString() << std::endl;
         need_split = false;
         for (Row *row : this->Rows) {
             if (row->needSplit()) {
                 row->split();
                 need_split = true;
                 this->update_map_converting_id_to_row();
+                this->start_row = idToRow[this->root_id];
                 this->init_all_rows();
                 break;
             }
         }
     }
-    this->start_row = idToRow[this->root_id];
+    std::cout << toString() << std::endl;
 }
 
 
-Row *Table::add_row(std::vector<State *> states) {
+Row *Table::add_row(std::vector<ResultState *> states) {
     if (states[0]->is_accepted()) {
-        for (State *st : states) {
-            assert(st->get_accepted_node()->get_expression_name() ==
-                   states[0]->get_accepted_node()->get_expression_name());
+        for (ResultState *st : states) {
+            assert(st->get_expression_name() ==
+                   states[0]->get_expression_name());
         }
     }
     Row *row = new Row(this->ID++);
     row->set_table(this);
     row->set_status(states);
     if (states[0]->is_accepted()) {
-        row->set_accepted(states[0]->get_accepted_node()->get_expression_name());
+        row->set_accepted(states[0]->get_expression_name());
     }
     this->Rows.push_back(row);
     return row;
@@ -61,10 +62,9 @@ std::vector<char> Table::get_inputs() {
 void Table::update_map_converting_id_to_row() {
     idToRow.clear();
     for (Row *row : this->Rows) {
-        for (State *st : row->get_status()) {
-            for (Node *node : *st->get_state_nodes()) {
-                idToRow[node->get_id()] = row->getRowNumber();
-            }
+        for (ResultState *st : row->get_status()) {
+            idToRow[st->get_id()] = row->getRowNumber();
+
         }
 
     }
@@ -91,7 +91,7 @@ int Table::input_to_column(char input) {
 }
 
 std::string Table::toString() {
-    std::string ans = "inputs | random node id "; // 20 char
+    std::string ans = "row    | random node id "; // 20 char
     for (auto it :inputs) {
         ans += "|          ";
         ans += it;
@@ -100,8 +100,8 @@ std::string Table::toString() {
     }
 
     ans += "\n";
-    ans+=std::string(ans.size(),'_');
-    ans+="\n";
+    ans += std::string(ans.size(), '_');
+    ans += "\n";
     for (auto it: Rows) {
         ans += it->toString();
         ans += "\n";

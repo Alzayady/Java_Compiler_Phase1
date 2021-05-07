@@ -23,7 +23,10 @@ int main() {
         nfa_genarator.add_expression(re.get_type(), value);
     }
     LexicalAnalyzer* lexicalAnalyzer = nfa_genarator.go();
-    lexicalAnalyzer->convert("while()while()44;");
+    vector<Token * > tokens = lexicalAnalyzer->convert("while()while()44;");
+    for(auto it : tokens){
+        cout<<it->toString()<<endl;
+    }
     /*
         converting NFA to its equivalent DFA
     */

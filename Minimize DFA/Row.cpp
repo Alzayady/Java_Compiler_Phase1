@@ -3,6 +3,7 @@
 //
 
 #include <cassert>
+#include <sstream>
 #include "Row.h"
 
 
@@ -15,7 +16,7 @@ void Row::set_table(Table *table) {
     this->table = table;
 }
 
-void Row::set_status(std::vector<State *> states) {
+void Row::set_status(std::vector<ResultState *> states) {
     this->states = states;
 }
 
@@ -36,7 +37,7 @@ int Row::getRowNumber() {
     return this->rowNumber;
 }
 
-std::vector<State *> Row::get_status() {
+std::vector<ResultState *> Row::get_status() {
     return this->states;
 }
 
@@ -46,7 +47,7 @@ void Row::init() {
     this->cell_vector.resize(inputs.size());
     for (int i = 0; i < inputs.size(); i++) {
         std::unordered_set<int> hashed_next;
-        for (State *st: this->get_status()) {
+        for (ResultState *st: this->get_status()) {
             int next_row = this->get_next_row_under_input(inputs[i], st);
             if (hashed_next.count(next_row))continue;
             hashed_next.insert(next_row);
@@ -57,7 +58,7 @@ void Row::init() {
 }
 
 void Row::split() {
-    std::vector<State *> states_row1, states_row2;
+    std::vector<ResultState *> states_row1, states_row2;
     states_row1.push_back(this->states[0]);
     for (int i = 1; i < states.size(); i++) {
         if (this->has_same_transition(this->states[0], this->states[i])) {
@@ -81,7 +82,7 @@ bool Row::needSplit() {
     return false;
 }
 
-bool Row::has_same_transition(State *state1, State *state2) {
+bool Row::has_same_transition(ResultState *state1, ResultState *state2) {
     for (char input : this->table->get_inputs()) {
         int next1 = this->get_next_row_under_input(input, state1);
         int next2 = this->get_next_row_under_input(input, state2);
@@ -90,11 +91,10 @@ bool Row::has_same_transition(State *state1, State *state2) {
     return true;
 }
 
-int Row::get_next_row_under_input(int input, State *st) {
-    std::unordered_map<char, State *> trans = st->get_transitions();
+int Row::get_next_row_under_input(int input, ResultState *st) {
+    std::unordered_map<char, ResultState *> trans = st->get_transitions();
     if (trans.count(input)) {
-        int next_row = this->table->convert_id_to_row(
-                (*trans[input]->get_state_nodes()->begin())->get_id());
+        int next_row = this->table->convert_id_to_row(trans[input]->get_id());
         return next_row;
     }
     return -1;
@@ -111,52 +111,52 @@ int Row::get_next_row(int column) {
 
 std::string Row::toString() {
     std::string str;
-    str+= char (this->getRowNumber()+'0');
-    if(this->table->get_start_row()== this->getRowNumber()){
-        str+=" ) <--|";
-    }else{
-        str+=" )    |";
+    str += char(this->getRowNumber() + '0');
+    if (this->table->get_start_row() == this->getRowNumber()) {
+        str += " ) <--|";
+    } else {
+        str += " )    |";
     }
     int dif = 11 - str.size();
-    while (dif>=0){
+    while (dif >= 0) {
         dif--;
-        str+=" ";
+        str += " ";
     }
-    for(State *  it : states){
-        int n = ( *it->get_state_nodes()->begin())->get_id();
+    for (ResultState *it : states) {
+        int n = it->get_id();
         std::stringstream ss;
-        ss<<n;
+        ss << n;
         std::string temp = ss.str();
-        str+=temp;
+        str += temp;
         break;
     }
     int sp = 23 - str.size();
-    while (sp>0){
-        str+=" ";
+    while (sp > 0) {
+        str += " ";
         sp--;
     }
-    for(auto it :this->cell_vector){
-        std::string temp ;
-        temp+=" |  ";
-        for(auto itt : it){
-            if(itt == -1){
-                temp+=" -1 ,";
+    for (auto it :this->cell_vector) {
+        std::string temp;
+        temp += " |  ";
+        for (auto itt : it) {
+            if (itt == -1) {
+                temp += " -1 ,";
                 continue;
             }
-            temp+= "  " ;
-            temp+= char (itt+'0');
-            temp+= " , ";
+            temp += "  ";
+            temp += char(itt + '0');
+            temp += " , ";
         }
         temp.pop_back();
         temp.pop_back();
-        sp =20-temp.size();
-        while (sp--){
-            temp+=" ";
+        sp = 20 - temp.size();
+        while (sp--) {
+            temp += " ";
         }
-        str+=temp;
+        str += temp;
     }
-    if(this->isAccepted()){
-        str+="  Accepted name :  " + this->get_expression_name();
+    if (this->isAccepted()) {
+        str += "  Accepted name :  " + this->get_expression_name();
     }
     return str;
 
