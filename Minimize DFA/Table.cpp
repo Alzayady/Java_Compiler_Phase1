@@ -91,11 +91,11 @@ int Table::input_to_column(char input) {
 }
 
 std::string Table::toString() {
-    std::string ans = "row    | random node id "; // 20 char
+    std::string ans = "row    ";
     for (auto it :inputs) {
-        ans += "|          ";
+        ans += "|    ";
         ans += it;
-        ans += "        ";
+        ans += "    ";
 
     }
 
@@ -129,5 +129,11 @@ bool Table::isAcceptedRow(int row) {
 std::string Table::getAcceptedName(int row) {
     assert(Rows[row]->isAccepted());
     return Rows[row]->get_expression_name();
+}
+
+void Table::make_stable() {
+    for (auto it : Rows) {
+        it->make_stable();
+    }
 }
 
