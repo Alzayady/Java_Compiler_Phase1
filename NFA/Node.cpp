@@ -37,10 +37,6 @@ std::string Node::get_expression_name() {
     return expression_name;
 }
 
-bool Node::operator<(const Node &other) const {
-    return (this->id) < (other.id);
-}
-
 std::vector<Edge *> Node::get_edges() {
     return edges;
 }

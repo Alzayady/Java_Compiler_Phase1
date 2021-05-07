@@ -15,7 +15,7 @@ class Edge;
 class Node {
 private:
     static unsigned int cnt; // will be initialized explicitly in Node.cpp
-    int id;
+    unsigned int id;
     std::string expression_name;
     std::vector<Edge *> edges;
 
@@ -35,8 +35,6 @@ public:
     bool is_accepted();
 
     int get_id();
-
-    bool operator<(const Node &other) const;
 
     static void delete_node_cascade(Node * node);
 };

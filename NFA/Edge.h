@@ -11,7 +11,7 @@ class Node ;
 class Edge {
 private:
     Node* node;
-    char name;
+    const char name;
 
 public:
     Edge(Node* node, char name): node(node), name(name){};
