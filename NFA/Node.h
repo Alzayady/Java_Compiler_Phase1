@@ -37,6 +37,8 @@ public:
     int get_id();
 
     bool operator<(const Node &other) const;
+
+    static void delete_node_cascade(Node * node);
 };
 
 

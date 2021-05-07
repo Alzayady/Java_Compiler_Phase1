@@ -3,6 +3,7 @@
 //
 
 #include "Node.h"
+#include <unordered_set>
 
 unsigned int Node::cnt = 0;
 
@@ -42,4 +43,18 @@ bool Node::operator<(const Node &other) const {
 
 std::vector<Edge *> Node::get_edges() {
     return edges;
+}
+
+void dfs(Node* node, std::unordered_set<int>& vis) {
+    vis.insert(node->get_id());
+    for(Edge* edge: node->get_edges()) {
+        if (vis.find(edge->get_node()->get_id()) == vis.end())
+            dfs(edge->get_node(), vis);
+    }
+    delete node;
+}
+
+void Node::delete_node_cascade(Node *node) {
+    std::unordered_set<int> vis;
+    dfs(node, vis);
 }
