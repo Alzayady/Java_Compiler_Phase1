@@ -39,12 +39,15 @@ std::vector<ResultState *> *result_state_factory(std::vector<State *> *state_spa
         (*ans).push_back(cur);
 
     }
+#ifdef __DEBUGMODE
+
     for (int i = 0; i < (int) state_space->size(); i++) {
         std::cout << (*state_space)[i]->to_string() << "was mapped to " << (*ans)[i]->get_id() << std::endl;
     }
     for (int i = 0; i < (int) ans->size(); i++) {
         std::cout << (*ans)[i]->to_string() << std::endl;
     }
+#endif
     return ans;
 }
 
@@ -158,37 +161,44 @@ std::vector<ResultState *> *construct_dfa_without_minimization(Node *root) {
             }
         }
     }
-
+#ifdef __DEBUGMODE
     for (int i = 0; i < (int) state_space.size(); i++) {
-//        std::cout << (state_space[i])->get_details() << std::endl; // for debugging
+        std::cout << (state_space[i])->get_details() << std::endl; // for debugging
     }
-
-    return result_state_factory(&state_space);
+#endif
+    std::vector<ResultState *> *ans = result_state_factory(&state_space);
+    Node::delete_node_cascade(root);
+    return ans;
 }
 
 
 void test_custom() {
     std::cout << "Test 2 started" << std::endl;
-    std::vector<Node> a(7);
-    Edge *edge01 = new Edge(&a[1], Graph::LAMBDA);
-    Edge *edge02 = new Edge(&a[2], Graph::LAMBDA);
-    Edge *edge03 = new Edge(&a[3], 'b');
-    Edge *edge14 = new Edge(&a[4], 'b');
-    Edge *edge25 = new Edge(&a[5], 'b');
-    Edge *edge36 = new Edge(&a[6], 'a');
-    Edge *edge12 = new Edge(&a[1], 'a');
-    Edge *edge11 = new Edge(&a[2], 'a');
-    a[0].add_edge(edge01);
-    a[0].add_edge(edge02);
-    a[0].add_edge(edge03);
+    std::vector<Node *> a(10);
+    for (int i = 0; i < 7; i++) {
+        a[i] = (new Node());
+    }
+    Edge *edge01 = new Edge(a[1], Graph::LAMBDA);
+    Edge *edge02 = new Edge(a[2], Graph::LAMBDA);
+    Edge *edge03 = new Edge(a[3], 'b');
+    Edge *edge14 = new Edge(a[4], 'b');
+    Edge *edge25 = new Edge(a[5], 'b');
+    Edge *edge36 = new Edge(a[6], 'a');
+    Edge *edge12 = new Edge(a[1], 'a');
+    Edge *edge11 = new Edge(a[2], 'a');
+    a[0]->add_edge(edge01);
+    a[0]->add_edge(edge02);
+    a[0]->add_edge(edge03);
 
-    a[1].add_edge(edge14);
-    a[1].add_edge(edge12);
-    a[1].add_edge(edge11);
-    a[2].add_edge(edge25);
-    a[3].add_edge(edge36);
+    a[1]->add_edge(edge14);
+    a[1]->add_edge(edge12);
+    a[1]->add_edge(edge11);
+    a[2]->add_edge(edge25);
+    a[3]->add_edge(edge36);
 
-    // construct_dfa_without_minimization(&a[0]);
+
+    construct_dfa_without_minimization(a[0]);
+//    delete(a[0]) ;
 //    for (auto s : states) {
 //        if (s->is_accepted()) {
 //            std::cout << s->get_accepted_node()->get_id() << std::endl;

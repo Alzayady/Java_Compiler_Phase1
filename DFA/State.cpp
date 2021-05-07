@@ -9,23 +9,12 @@ State::State() {
     accepted_node = nullptr;
 }
 
-State::~State() {
-    delete(accepted_node) ;
-    for(auto node : st ) {
-        delete(node);
-    }
-}
 /***
  *
  * @return vector of pointers to the equivalent nodes in the current state sorted in acsending order
  */
 std::set<Node* , cmp>* State::get_state_nodes() {
     return &st;
-//    std::vector<Node* > ans ;
-//    for(auto node_ptr  : st ) {
-//        ans.push_back(node_ptr) ;
-//    }
-//    return &ans ;
 }
 
 std::unordered_map<char, State *> State::get_transitions() {
