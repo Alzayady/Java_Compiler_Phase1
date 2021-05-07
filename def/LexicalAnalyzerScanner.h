@@ -4,6 +4,8 @@
 #include "imports.h"
 #include "RegularDefinition.h"
 #include "RegularExpression.h"
+#include "../src/RegularDefinition.cpp"
+#include "../src/RegularExpression.cpp"
 
 class LexicalAnalyzerScanner
 {
