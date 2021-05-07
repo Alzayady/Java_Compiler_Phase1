@@ -12,7 +12,7 @@ Node::Node() {
 }
 
 Node::~Node() {
-    for(Edge* edge: edges) {
+    for (Edge *edge: edges) {
         delete edge;
     }
 }
@@ -41,16 +41,34 @@ std::vector<Edge *> Node::get_edges() {
     return edges;
 }
 
-void dfs(Node* node, std::unordered_set<int>& vis) {
-    vis.insert(node->get_id());
-    for(Edge* edge: node->get_edges()) {
-        if (vis.find(edge->get_node()->get_id()) == vis.end())
+void dfs(Node *node, std::unordered_set<Node *> &vis) {
+    vis.insert(node);
+    for (Edge *edge: node->get_edges()) {
+#ifdef __DEBUGMODE
+        std::cout << "trying to go to node " << edge->get_node()->get_id() << std::endl;
+#endif
+        if (!vis.count(edge->get_node())) {
+#ifdef __DEBUGMODE
+            std::cout << "went  to go to node " << edge->get_node()->get_id() << std::endl;
+#endif
             dfs(edge->get_node(), vis);
+        } else {
+#ifdef __DEBUGMODE
+            std::cout << "failed to go to node " << edge->get_node()->get_id() << std::endl;
+#endif
+        }
     }
+#ifdef __DEBUGMODE
+    std::cout << "hello" << node->get_id() << std::endl;
+#endif
+
     delete node;
 }
 
 void Node::delete_node_cascade(Node *node) {
-    std::unordered_set<int> vis;
+    std::unordered_set<Node *> vis;
     dfs(node, vis);
+#ifdef __DEBUGMODE
+    std::cout << "Finished deleting the graph nodes successfully " << std::endl;
+#endif
 }
