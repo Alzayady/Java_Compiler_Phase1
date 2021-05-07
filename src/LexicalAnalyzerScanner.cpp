@@ -112,7 +112,10 @@ void LexicalAnalyzerScanner::convert_strings_to_regular_expressions(vector<strin
     {
         RegularExpression re;
         string word = words[i], value="(";
-        re.set_type(word);
+        string temp = word;
+        if(word.size()==2 && word[0]=='\\')
+            temp = word.substr(1,word.size()-1);
+        re.set_type(temp);
         for(int j = 0; j< word.size(); j++)
         {
             value = value + word[j];
