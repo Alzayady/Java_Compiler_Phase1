@@ -3,15 +3,13 @@
 //
 
 #include "NFA_Generator.h"
-#include "Graph.h"
-#include "Graph.cpp"
-#include "Node.cpp"
-#include "Node.h"
 #include <stack>
 #include "../DFA/GraphAdapter.h"
 #include "../DFA/GraphAdapter.cpp"
+#include "Graph.h"
+#include "Graph.cpp"
 
-#include <utility>
+bool debug = false;
 
 void print(std::string name, std::string& expression, Graph* graph) {
     printf("NFA graph for expression %s\n", expression.c_str());
@@ -22,7 +20,7 @@ void print(std::string name, std::string& expression, Graph* graph) {
 
 void NFA_Generator::add_expression(std::string name, std::string& expression) {
     Graph* graph = to_NFA(expression);
-    print(name, expression, graph);
+    if (debug) print(name, expression, graph);
     graph->get_end()->set_expression_name(name);
     expressions.push_back(graph);
 }
@@ -87,11 +85,13 @@ Node * NFA_Generator::combine() {
     return root;
 }
 
-void NFA_Generator::go() {
+LexicalAnalyzer* NFA_Generator::go() {
     Node* root = combine();
-    printf("Final NFA graph\n");
-    Graph::print(root);
-    printf("End of Manfy work b7bkoooooo\n\n");
+    if (debug) {
+        printf("Final NFA graph\n");
+        Graph::print(root);
+        printf("End of Manfy work b7bkoooooo\n\n");
+    }
     GraphAdapter ga ;
-    ga.get_lexical_analyzer(root) ;
+    return ga.get_lexical_analyzer(root) ;
 }

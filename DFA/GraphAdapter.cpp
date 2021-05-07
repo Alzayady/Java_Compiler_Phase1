@@ -9,6 +9,8 @@
 #include "../DFA/state.cpp"
 #include "../analyze_to_tokens/LexicalAnalyzer.h"
 #include "../analyze_to_tokens/LexicalAnalyzer.cpp"
+#include "../NFA/Edge.h"
+#include "../NFA/Edge.cpp"
 
 std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
 
@@ -24,11 +26,6 @@ LexicalAnalyzer* GraphAdapter::get_lexical_analyzer(Node *root) {
     Minimize *m = new Minimize(dfa, root);
     Table *table = m->run();
     LexicalAnalyzer *lexicalAnalyzer = new LexicalAnalyzer(table);
-    std::vector<Token *> ans = lexicalAnalyzer->convert("while()while()44;");
-
-    for (auto it: ans) {
-        std::cout << it->toString() << std::endl;
-    }
     return lexicalAnalyzer;
 }
 

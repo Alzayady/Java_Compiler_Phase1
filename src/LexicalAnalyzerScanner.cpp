@@ -1,4 +1,5 @@
 #include "../def/LexicalAnalyzerScanner.h"
+#include "../analyze_to_tokens/LexicalAnalyzer.h"
 
 void LexicalAnalyzerScanner::scan_lexical_rules_file(string file_name)
 {
@@ -18,13 +19,13 @@ void LexicalAnalyzerScanner::scan_lexical_rules_file(string file_name)
             {
                 extract_punctuations(line);
             } 
-            else if (line.find(":") < line.size())
+            else if (line.find(':') < line.size())
             {
                 line = remove_spaces(line);
                 extract_regular_expression(line);
             }
 
-            else if (line.find("=") < line.size())
+            else if (line.find('=') < line.size())
             {
                 line = remove_spaces(line);
                 extract_regular_definition(line);
@@ -43,7 +44,6 @@ void LexicalAnalyzerScanner::scan_input_program(string file_name)
     fstream input_file;
     input_file.open (file_name, ios::out | ios::in);
     string line;
-
 
     if (input_file.is_open()){
         while (getline(input_file, line))
@@ -64,7 +64,7 @@ void LexicalAnalyzerScanner::scan_input_program(string file_name)
 void LexicalAnalyzerScanner::write_lexical_output()
 {
     fstream output_file;
-    output_file.open ("out_testing.txt", ios::out | ios::trunc);
+    output_file.open ("../out_testing.txt", ios::out | ios::trunc);
     output_file << "Regular Definitions" <<endl;
     output_file << "Type\t\tValue" <<endl;
     vector<RegularDefinition> rd = get_regular_definitions();
@@ -98,7 +98,7 @@ string LexicalAnalyzerScanner::remove_spaces(string line)
 {
     string str = line;
     int index = 0, pos = 0;
-    while ((index = str.find(" ", pos)) < line.size())
+    while ((index = str.find(' ', pos)) < line.size())
     {
         str.replace(index, 1, "" );
         pos = index + 1;        // or just index without adding 1??
