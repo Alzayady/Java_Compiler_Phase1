@@ -16,6 +16,7 @@ std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
 
 std::vector<ResultState *> *construct_dfa_without_minimization(Node *root);
 
+using namespace std;
 
 GraphAdapter::GraphAdapter() {
 
@@ -60,14 +61,9 @@ std::vector<ResultState *> *result_state_factory(std::vector<State *> *state_spa
 
 LexicalAnalyzer *GraphAdapter::get_lexical_analyzer(Node *root) {
     std::vector<ResultState *> *dfa = construct_dfa_without_minimization(root);
-    // zayady start editing here
-    // zayady start editing here
-    // zayady start editing here
-    // zayady start editing here
-    std::cout<<"fuck hamze"<<std::endl;
     Minimize *m = new Minimize(dfa, 0);
     Table *table = m->run();
-    delete m ;
+    delete m;
     LexicalAnalyzer *lexicalAnalyzer = new LexicalAnalyzer(table);
     return lexicalAnalyzer;
 }
@@ -114,7 +110,7 @@ std::set<Node *, cmp> get_epsilon_neighbours(Node *root) {
  */
 std::vector<ResultState *> *construct_dfa_without_minimization(Node *root) {
     // Get all states that are reachable from the root state through an EPSILON transition (lampda transition)
-    State *initial = new State() ;
+    State *initial = new State();
     std::set<Node *, cmp> initial_states = get_epsilon_neighbours(root);
     for (auto node : initial_states) {
         initial->add_node(node);
@@ -161,7 +157,7 @@ std::vector<ResultState *> *construct_dfa_without_minimization(Node *root) {
                 }
             }
             if (!repeated) {
-                State *new_state = new State() ;
+                State *new_state = new State();
                 for (Node *node : possible_state) {
                     new_state->add_node(node);
                 }
@@ -181,8 +177,8 @@ std::vector<ResultState *> *construct_dfa_without_minimization(Node *root) {
     std::vector<ResultState *> *ans = result_state_factory(&state_space);
 
 
-    for(int i=0;i<(int)state_space.size() ;i++){
-        delete state_space[i] ;
+    for (int i = 0; i < (int) state_space.size(); i++) {
+        delete state_space[i];
     }
 
 

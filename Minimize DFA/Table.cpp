@@ -92,11 +92,11 @@ int Table::input_to_column(char input) {
 }
 
 std::string Table::toString() {
-    std::string ans = "row    | random node id "; // 20 char
+    std::string ans = "row    ";
     for (auto it :inputs) {
-        ans += "|          ";
+        ans += "|    ";
         ans += it;
-        ans += "        ";
+        ans += "    ";
 
     }
 

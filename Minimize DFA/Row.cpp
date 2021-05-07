@@ -113,30 +113,20 @@ int Row::get_next_row(int column) {
 
 std::string Row::toString() {
     std::string str;
-    str += char(this->getRowNumber() + '0');
+    std::stringstream ss;
+    ss<< this->getRowNumber();
+    str = ss.str();
     if (this->table->get_start_row() == this->getRowNumber()) {
-        str += " ) <--|";
+        str += " ) <--";
     } else {
-        str += " )    |";
+        str += " )    ";
     }
-    int dif = 11 - str.size();
+    int dif = 4 - str.size();
     while (dif >= 0) {
         dif--;
         str += " ";
     }
-    for (ResultState *it : states) {
-        int n = it->get_id();
-        std::stringstream ss;
-        ss << n;
-        std::string temp = ss.str();
-        str += temp;
-        break;
-    }
-    int sp = 23 - str.size();
-    while (sp > 0) {
-        str += " ";
-        sp--;
-    }
+
     for (auto it :this->cell_vector) {
         std::string temp;
         temp += " |  ";
@@ -146,12 +136,15 @@ std::string Row::toString() {
                 continue;
             }
             temp += "  ";
-            temp += char(itt + '0');
+            std::stringstream  sss ;
+            sss<<itt;
+            temp+=sss.str();
+//            temp += char(itt + '0');
             temp += " , ";
         }
         temp.pop_back();
         temp.pop_back();
-        sp = 20 - temp.size();
+        int sp = 10 - temp.size();
         while (sp--) {
             temp += " ";
         }

@@ -27,7 +27,7 @@ std::unordered_map<char, State *> State::get_transitions() {
 void State::add_node(Node *node) {
     st.insert(node);
     if (node->is_accepted()) {
-        if (!accepted || (node < accepted_node)) {
+        if (!accepted || (node->get_id() < accepted_node->get_id())) {
             this->accepted = true;
             accepted_node = node;
         }
