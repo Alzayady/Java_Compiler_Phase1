@@ -23,7 +23,7 @@ int main() {
         nfa_genarator.add_expression(re.get_type(), value);
     }
     LexicalAnalyzer* lexicalAnalyzer = nfa_genarator.go();
-    vector<Token * > tokens = lexicalAnalyzer->convert("while()while()44;");
+    vector<Token * > tokens = lexicalAnalyzer->convert("while(elzyady) { print('ana')}");
     for(auto it : tokens){
         cout<<it->toString()<<endl;
     }
@@ -36,7 +36,7 @@ int main() {
     /*
         reading programs to be tested
     */
-    // scanner.scan_input_program("../testing_program.txt");
-    // cout << "DONE!" << std::endl;
+    scanner.scan_input_program("../testing_program.txt");
+    cout << "DONE!" << std::endl;
     return 0;
 }
