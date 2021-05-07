@@ -10,17 +10,14 @@ State::State() {
     accepted = false;
     accepted_node = nullptr;
 }
+State::~State(){
+}
 /***
  *
  * @return vector of pointers to the equivalent nodes in the current state sorted in acsending order
  */
 std::set<Node* , cmp>* State::get_state_nodes() {
     return &st;
-//    std::vector<Node* > ans ;
-//    for(auto node_ptr  : st ) {
-//        ans.push_back(node_ptr) ;
-//    }
-//    return &ans ;
 }
 
 std::unordered_map<char, State *> State::get_transitions() {
@@ -77,6 +74,7 @@ std::string State::get_details() {
     ss << ']';
     return ss.str();
 }
+
 
 //
 //bool State::operator==(const State &other) const {

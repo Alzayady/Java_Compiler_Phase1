@@ -9,7 +9,7 @@
 #include <vector>
 #include <unordered_set>
 #include <map>
-#include "../DFA/State.h"
+#include "../DFA/ResultState.h"
 
 class Row;
 
@@ -27,7 +27,7 @@ private:
 public:
     Table(std::unordered_set<char> inputs, int i);
 
-    Row *add_row(std::vector<State *> states);
+    Row *add_row(std::vector<ResultState *> states);
 
     std::vector<char> get_inputs();
 
@@ -50,6 +50,8 @@ public:
     bool isAcceptedRow(int row);
 
     std::string getAcceptedName(int row);
+
+    void make_stable();
 };
 
 

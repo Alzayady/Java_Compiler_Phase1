@@ -14,17 +14,60 @@
 
 std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
 
-std::vector<State *> construct_dfa_without_minimization(Node *root);
+std::vector<ResultState *> *construct_dfa_without_minimization(Node *root);
 
 
 GraphAdapter::GraphAdapter() {
 
 }
 
-LexicalAnalyzer* GraphAdapter::get_lexical_analyzer(Node *root) {
-    std::vector<State *> dfa = construct_dfa_without_minimization(root);
-    Minimize *m = new Minimize(dfa, root);
+
+std::vector<ResultState *> *result_state_factory(std::vector<State *> *state_space) {
+    std::unordered_map<State *, ResultState *> mp;
+    for (int i = 0; i < (int) state_space->size(); i++) {
+        mp[(*state_space)[i]] = new ResultState(i);
+    }
+    std::vector<ResultState *> *ans = new std::vector<ResultState *>;
+
+    for (int i = 0; i < (int) state_space->size(); i++) {
+        ResultState *cur = mp[(*state_space)[i]];
+
+        if ((*state_space)[i]->is_accepted()) {
+            cur->set_as_accepted();
+            cur->set_expression_name((*state_space)[i]->get_accepted_node()->get_expression_name());
+        }
+        for (auto transition_pair : (*state_space)[i]->get_transitions()) {
+            char value = transition_pair.first;
+            State *nxt_node = transition_pair.second;
+            cur->add_transition(value, mp[nxt_node]);
+        }
+
+        (*ans).push_back(cur);
+
+    }
+#ifdef __DEBUGMODE
+
+    for (int i = 0; i < (int) state_space->size(); i++) {
+        std::cout << (*state_space)[i]->to_string() << "was mapped to " << (*ans)[i]->get_id() << std::endl;
+    }
+    for (int i = 0; i < (int) ans->size(); i++) {
+        std::cout << (*ans)[i]->to_string() << std::endl;
+    }
+#endif
+    return ans;
+}
+
+
+LexicalAnalyzer *GraphAdapter::get_lexical_analyzer(Node *root) {
+    std::vector<ResultState *> *dfa = construct_dfa_without_minimization(root);
+    // zayady start editing here
+    // zayady start editing here
+    // zayady start editing here
+    // zayady start editing here
+    std::cout<<"fuck hamze"<<std::endl;
+    Minimize *m = new Minimize(dfa, 0);
     Table *table = m->run();
+    delete m ;
     LexicalAnalyzer *lexicalAnalyzer = new LexicalAnalyzer(table);
     return lexicalAnalyzer;
 }
@@ -63,14 +106,15 @@ std::set<Node *, cmp> get_epsilon_neighbours(Node *root) {
     return ans;
 }
 
+
 /***
  *
  * @param root
  * @return vector of states describing the finite state machine without minimization
  */
-std::vector<State *> construct_dfa_without_minimization(Node *root) {
+std::vector<ResultState *> *construct_dfa_without_minimization(Node *root) {
     // Get all states that are reachable from the root state through an EPSILON transition (lampda transition)
-    State *initial = new State();
+    State *initial = new State() ;
     std::set<Node *, cmp> initial_states = get_epsilon_neighbours(root);
     for (auto node : initial_states) {
         initial->add_node(node);
@@ -85,6 +129,7 @@ std::vector<State *> construct_dfa_without_minimization(Node *root) {
         State *cur = q.front();
         q.pop();
         std::unordered_map<char, std::set<Node *, cmp>> mp;
+
         for (auto node : *cur->get_state_nodes()) {
             for (auto edge: node->get_edges()) {
                 char value = edge->get_name();
@@ -102,6 +147,7 @@ std::vector<State *> construct_dfa_without_minimization(Node *root) {
             char value = map_entry.first;
             std::set<Node *, cmp> possible_state = map_entry.second;
             bool repeated = false;
+
             for (int i = 0; i < (int) state_space.size(); i++) {
 
 
@@ -115,7 +161,7 @@ std::vector<State *> construct_dfa_without_minimization(Node *root) {
                 }
             }
             if (!repeated) {
-                State *new_state = new State();
+                State *new_state = new State() ;
                 for (Node *node : possible_state) {
                     new_state->add_node(node);
                 }
@@ -124,10 +170,62 @@ std::vector<State *> construct_dfa_without_minimization(Node *root) {
                 q.push(new_state);
             }
         }
+
+    }
+#ifdef __DEBUGMODE
+    for (int i = 0; i < (int) state_space.size(); i++) {
+        std::cout << (state_space[i])->get_details() << std::endl; // for debugging
+    }
+#endif
+    std::cout << "NO we finished and we are goint to compress the nodes " << std::endl;
+    std::vector<ResultState *> *ans = result_state_factory(&state_space);
+
+
+    for(int i=0;i<(int)state_space.size() ;i++){
+        delete state_space[i] ;
     }
 
-    for (int i = 0; i < (int) state_space.size(); i++) {
-        std::cout << (state_space[i])->get_details() << std::endl;
-    }
-    return state_space;
+
+    Node::delete_node_cascade(root);
+    return ans;
 }
+
+
+void test_custom() {
+    std::cout << "Test 2 started" << std::endl;
+    std::vector<Node *> a(10);
+    for (int i = 0; i < 7; i++) {
+        a[i] = (new Node());
+    }
+
+    Edge *edge01 = new Edge(a[1], Graph::LAMBDA);
+    Edge *edge02 = new Edge(a[2], Graph::LAMBDA);
+    Edge *edge03 = new Edge(a[3], 'b');
+    Edge *edge14 = new Edge(a[4], 'b');
+    Edge *edge25 = new Edge(a[5], 'b');
+    Edge *edge36 = new Edge(a[6], 'a');
+    Edge *edge12 = new Edge(a[1], 'a');
+    Edge *edge11 = new Edge(a[2], 'a');
+    a[0]->add_edge(edge01);
+    a[0]->add_edge(edge02);
+    a[0]->add_edge(edge03);
+
+    a[1]->add_edge(edge14);
+    a[1]->add_edge(edge12);
+    a[1]->add_edge(edge11);
+    a[2]->add_edge(edge25);
+    a[3]->add_edge(edge36);
+
+    std::cout << "sht" << std::endl;
+    construct_dfa_without_minimization(a[0]);
+
+//    delete(a[0]) ;
+//    for (auto s : states) {
+//        if (s->is_accepted()) {
+//            std::cout << s->get_accepted_node()->get_id() << std::endl;
+//        }
+//    }
+    std::cout << "Test 2 finished" << std::endl;
+
+}
+

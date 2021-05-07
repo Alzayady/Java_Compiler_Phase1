@@ -34,9 +34,13 @@ void check_for_and_operation_or_inside_in_the_stack(char token, std::stack<Graph
     }
 }
 
-void perform_union_operation(std::stack<Graph*>& st, std::stack<char>& symbols){
-    Graph* graph = st.top(); st.pop(); symbols.pop();
-    st.top()->union_with(graph);
+void perform_union_or_concatenate_operation(std::stack<Graph*>& st, std::stack<char>& symbols){
+    Graph* graph = st.top(); st.pop();
+    if (symbols.top() == '&')
+        st.top()->concatenate_with(graph);
+    else
+        st.top()->union_with(graph);
+    symbols.pop();
 }
 
 void play_with_stacks(char token, std::stack<Graph*>& st, std::stack<char>& symbols){
@@ -52,7 +56,7 @@ void play_with_stacks(char token, std::stack<Graph*>& st, std::stack<char>& symb
     }
     else if (token == ')') {
         while(symbols.top() not_eq '(') {
-            perform_union_operation(st, symbols);
+            perform_union_or_concatenate_operation(st, symbols);
         }
         symbols.pop();
     }
@@ -71,7 +75,7 @@ Graph* NFA_Generator::to_NFA(std::string& expression) {
         play_with_stacks(token, st, symbols);
     }
     while(not symbols.empty()) {
-        perform_union_operation(st, symbols);
+        perform_union_or_concatenate_operation(st, symbols);
     }
     return st.top();
 
@@ -81,7 +85,9 @@ Node * NFA_Generator::combine() {
     Node* root = new Node;
     for(Graph* expression: expressions) {
         root->add_edge(new Edge(expression->get_start(), Graph::LAMBDA));
+        Graph::delete_graph(expression);
     }
+    expressions.clear();
     return root;
 }
 
@@ -93,5 +99,5 @@ LexicalAnalyzer* NFA_Generator::go() {
         printf("End of Manfy work b7bkoooooo\n\n");
     }
     GraphAdapter ga ;
-    return ga.get_lexical_analyzer(root) ;
+    return ga.get_lexical_analyzer(root);
 }

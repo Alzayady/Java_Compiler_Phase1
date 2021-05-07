@@ -13,13 +13,14 @@ class Table ;
 class Row {
 private:
     int rowNumber;
-    std::vector<State *> states;
+    std::vector<ResultState *> states;
     Table *table;
     bool accepted;
     std::string name; // in case of accepting state
     std::vector <std::vector<int>> cell_vector; // for every row , for every input , it contains the next row numbers , it may
     // contain more than next state during running , but at the end it will contain
     // only one next state , and ربنا يستر وتطلع صح
+
 public:
     Row(int rowNumber);
 
@@ -30,7 +31,7 @@ public:
 
     void set_table(Table *table);
 
-    void set_status(std::vector<State *> states) ;
+    void set_status(std::vector<ResultState *> states) ;
 
     bool isAccepted();
 
@@ -38,18 +39,20 @@ public:
 
     void set_accepted(std::string name);
 
-    std::vector<State *> get_status();
+    std::vector<ResultState *> get_status();
 
     void init();
 
     void split();
 
-    bool has_same_transition(State *state1, State *state2) ;
+    bool has_same_transition(ResultState *state1, ResultState *state2) ;
 
-    int get_next_row_under_input(int input, State *st);
+    int get_next_row_under_input(int input, ResultState *st);
 
 
     int get_next_row(int input);
+
+    void make_stable();
 
     std::string toString();
 
