@@ -2,10 +2,7 @@
 // Created by HP-SYSTEMS on 5/4/2021.
 //
 
-#include <iostream>
 #include "Minimize.h"
-#include "Table.h"
-#include "Table.cpp"
 
 using namespace std;
 

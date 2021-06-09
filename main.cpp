@@ -1,6 +1,4 @@
-#include "./def/Imports.h"
 #include "./def/LexicalAnalyzerScanner.h"
-#include "./src/LexicalAnalyzerScanner.cpp"
 
 int main() {
     freopen("./out.txt", "w", stdout);

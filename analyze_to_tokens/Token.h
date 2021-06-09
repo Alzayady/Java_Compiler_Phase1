@@ -10,12 +10,30 @@
 
 class Token {
 public:
-    Token(std::string , std::string);
-    std::string get_name_of_token();
-    std::string get_token();
-    bool IsError();
-    void set_Error();
-    std::string toString();
+    Token(std::string , std::string){
+        this->name_of_token = name_of_token;
+        this->token = token;
+        this->ErrorString = false;
+    }
+    std::string get_name_of_token(){
+        return name_of_token;
+    }
+    std::string get_token(){
+        return token;
+    }
+    bool IsError(){
+        return this->ErrorString;
+    }
+    void set_Error(){
+        this->ErrorString = true;
+    }
+    std::string toString(){
+        std::string ans = "name  : ";
+        ans+= this->name_of_token ;
+        ans+="   token : ";
+        ans+= this->token;
+        return ans;
+    }
 private:
     std::string name_of_token;
     std::string token;

@@ -3,8 +3,6 @@
 //
 
 #include "State.h"
-#include "../NFA/Node.h"
-#include "../NFA/Node.cpp"
 
 State::State() {
     accepted = false;

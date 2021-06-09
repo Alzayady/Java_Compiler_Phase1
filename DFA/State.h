@@ -10,9 +10,8 @@
 #include <queue>
 #include <map>
 #include <unordered_map>
-#include <assert.h>
+#include <cassert>
 #include <sstream>
-#include "../NFA/Graph.h" // need it to include the epsilon transition
 
 /**
  Custom comparator for the set I use to store the state

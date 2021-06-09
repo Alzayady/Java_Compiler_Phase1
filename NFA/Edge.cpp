@@ -8,6 +8,6 @@ Node* Edge::get_node() {
     return node;
 }
 
-char Edge::get_name() {
+char Edge::get_name() const {
     return name;
 }

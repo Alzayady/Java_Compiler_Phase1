@@ -7,8 +7,10 @@
 
 
 #include <vector>
-
 #include "Table.h"
+#include <cassert>
+#include <sstream>
+
 class Table ;
 class Row {
 private:

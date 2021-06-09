@@ -3,14 +3,6 @@
 //
 
 #include "GraphAdapter.h"
-#include "../Minimize DFA/minimize.h"
-#include "../Minimize DFA/minimize.cpp"
-#include "../DFA/state.h"
-#include "../DFA/state.cpp"
-#include "../analyze_to_tokens/LexicalAnalyzer.h"
-#include "../analyze_to_tokens/LexicalAnalyzer.cpp"
-#include "../NFA/Edge.h"
-#include "../NFA/Edge.cpp"
 
 std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
 

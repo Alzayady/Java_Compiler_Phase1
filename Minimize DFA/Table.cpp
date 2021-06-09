@@ -2,14 +2,9 @@
 // Created by HP-SYSTEMS on 5/4/2021.
 //
 
-#include <algorithm>
-#include <cassert>
-#include <iostream>
 #include "Table.h"
-#include "Row.h"
-#include "Row.cpp"
 
-Table::Table(std::unordered_set<char> inputs, int root_id) {
+Table::Table(const std::unordered_set<char>& inputs, int root_id) {
     for (char it : inputs) {
         this->inputs.push_back(it);
     }

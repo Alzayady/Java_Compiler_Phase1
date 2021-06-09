@@ -9,6 +9,7 @@
 
 #include <vector>
 #include "Table.h"
+#include <iostream>
 
 class Minimize {
 private:

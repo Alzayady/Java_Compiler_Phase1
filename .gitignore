@@ -1,2 +1,2 @@
 .gitignore
-out_testing.txt
+/cmake-build-debug/

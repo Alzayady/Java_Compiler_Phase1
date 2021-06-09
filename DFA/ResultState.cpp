@@ -1,6 +1,4 @@
 #include "ResultState.h"
-#include <assert.h>
-#include <sstream>
 
 ResultState::ResultState(int id) {
     this->id = id;

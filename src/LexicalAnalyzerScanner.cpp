@@ -1,5 +1,4 @@
 #include "../def/LexicalAnalyzerScanner.h"
-#include "../analyze_to_tokens/LexicalAnalyzer.h"
 
 void LexicalAnalyzerScanner::scan_lexical_rules_file(string file_name)
 {

@@ -6,6 +6,10 @@
 #define JAVA_COMPILER_RESULTSTATE_H
 #include <string>
 #include <unordered_map>
+#include <cassert>
+#include <sstream>
+
+
 class ResultState{
     int id ;
     std::string expression_name ;

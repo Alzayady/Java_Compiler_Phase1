@@ -1,13 +1,9 @@
 #ifndef _LexicalAnalyzerScanner_
 #define _LexicalAnalyzerScanner_
 
-#include "imports.h"
 #include "RegularDefinition.h"
 #include "RegularExpression.h"
-#include "../src/RegularDefinition.cpp"
-#include "../src/RegularExpression.cpp"
 #include "../NFA/NFA_Generator.h"
-#include "../NFA/NFA_Generator.cpp"
 
 class LexicalAnalyzerScanner
 {

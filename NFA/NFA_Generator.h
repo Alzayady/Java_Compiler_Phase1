@@ -9,6 +9,7 @@
 #include <vector>
 #include "../DFA/GraphAdapter.h"
 #include "Graph.h"
+#include <stack>
 
 class NFA_Generator {
 private:

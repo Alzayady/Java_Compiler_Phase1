@@ -1,0 +1,60 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/DFA/ResultState.h
+string
+-
+unordered_map
+-
+cassert
+-
+sstream
+-
+
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Row.h
+vector
+-
+Table.h
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Table.h
+cassert
+-
+sstream
+-
+
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Table.h
+vector
+-
+unordered_set
+-
+map
+-
+../DFA/ResultState.h
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/DFA/ResultState.h
+Row.h
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Row.h
+algorithm
+-
+cassert
+-
+iostream
+-
+
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens/LexicalAnalyzer.cpp
+LexicalAnalyzer.h
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens/LexicalAnalyzer.h
+
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens/LexicalAnalyzer.h
+../Minimize DFA/Table.h
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Table.h
+Token.h
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens/Token.h
+
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens/Token.h
+string
+-
+

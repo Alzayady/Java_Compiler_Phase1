@@ -2,11 +2,7 @@
 // Created by HP-SYSTEMS on 5/4/2021.
 //
 
-#include <cassert>
-#include <sstream>
 #include "Row.h"
-#include "../DFA/ResultState.h"
-#include "../DFA/ResultState.cpp"
 
 
 Row::Row(int rowNumber) {

@@ -3,8 +3,6 @@
 //
 
 #include "LexicalAnalyzer.h"
-#include "Token.h"
-#include "Token.cpp"
 
 LexicalAnalyzer::LexicalAnalyzer(Table *table) {
     this->table = table;

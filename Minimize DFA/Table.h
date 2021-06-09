@@ -10,6 +10,11 @@
 #include <unordered_set>
 #include <map>
 #include "../DFA/ResultState.h"
+#include "Row.h"
+#include <algorithm>
+#include <cassert>
+#include <iostream>
+
 
 class Row;
 
@@ -20,12 +25,12 @@ private:
     std::unordered_map<int, int> idToRow;
     int ID = 0;
     int root_id;
-    int start_row;
+    int start_row{};
 
     int input_to_column(char input);
 
 public:
-    Table(std::unordered_set<char> inputs, int i);
+    Table(const std::unordered_set<char>& inputs, int i);
 
     Row *add_row(std::vector<ResultState *> states);
 

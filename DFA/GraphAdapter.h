@@ -8,6 +8,9 @@
 
 #include "../NFA/Node.h"
 #include "../analyze_to_tokens/LexicalAnalyzer.h"
+#include "../Minimize DFA/Minimize.h"
+#include "../DFA/State.h"
+#include <Graph.h>
 
 class GraphAdapter {
 public:

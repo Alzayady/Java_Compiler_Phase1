@@ -6,6 +6,8 @@
 #define PROJECT_GRAPH_H
 
 #include "Node.h"
+#include <queue>
+#include <unordered_set>
 
 class Graph {
 private:

@@ -20,7 +20,7 @@ public:
 
     Node* get_node();
 
-    char get_name();
+    char get_name() const;
 };
 
 

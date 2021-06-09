@@ -3,11 +3,6 @@
 //
 
 #include "NFA_Generator.h"
-#include <stack>
-#include "../DFA/GraphAdapter.h"
-#include "../DFA/GraphAdapter.cpp"
-#include "Graph.h"
-#include "Graph.cpp"
 
 bool debug = false;
 

@@ -1,4 +1,4 @@
-#include "../def/RegularDefinition.h"
+#include "../def/RegularExpression.h"
 
 void RegularExpression::set_value(string val)
 {
