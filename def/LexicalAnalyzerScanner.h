@@ -4,14 +4,15 @@
 #include "imports.h"
 #include "RegularDefinition.h"
 #include "RegularExpression.h"
+#include "../NFA/NFA_Generator.h"
 
 class LexicalAnalyzerScanner
 {
     public:
-        bool has_definitions;
         void scan_lexical_rules_file(string file_name);
-        void scan_input_program(string file_name);
-        void write_lexical_output();
+        void write_tokens_of(string file_name);
+        void write_lexical_output(string file_name);
+        void build_automata();
         void add_to_keywords(string str)
         {
             keywords.push_back(str);
@@ -50,6 +51,9 @@ class LexicalAnalyzerScanner
         }
 
     private: 
+        bool has_definitions;
+        NFA_Generator nfa_genarator;
+        LexicalAnalyzer* lexicalAnalyzer;
         vector<string> keywords;
         vector<string> punctuations;
         vector<RegularDefinition> regular_definitions;

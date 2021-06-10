@@ -5,6 +5,7 @@
 #include <cassert>
 #include <sstream>
 #include "Row.h"
+#include "../DFA/ResultState.h"
 
 
 Row::Row(int rowNumber) {

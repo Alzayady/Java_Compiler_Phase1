@@ -6,7 +6,7 @@
 #define JAVA_COMPILER_LEXICALANALYZER_H
 
 
-#include <Table.h>
+#include "../Minimize DFA/Table.h"
 #include "Token.h"
 
 class LexicalAnalyzer {

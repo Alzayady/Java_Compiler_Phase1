@@ -5,7 +5,7 @@
 #ifndef JAVA_COMPILER_MINIMIZE_H
 #define JAVA_COMPILER_MINIMIZE_H
 
-#include <ResultState.h>
+#include "../DFA/ResultState.h"
 
 #include <vector>
 #include "Table.h"

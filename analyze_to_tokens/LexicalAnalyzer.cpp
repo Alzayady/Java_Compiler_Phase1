@@ -3,7 +3,7 @@
 //
 
 #include "LexicalAnalyzer.h"
-#include "Token.h"
+#include "../Phase2/def/InputMatcher.h"
 
 LexicalAnalyzer::LexicalAnalyzer(Table *table) {
     this->table = table;
@@ -40,6 +40,7 @@ std::vector<Token *> LexicalAnalyzer::convert(std::string str) {
                 i -= dif;
                 Token *token = new Token(acceptingName, last_accepted_string);
                 tokens.push_back(token);
+                InputMatcher::getInstance().match(token->get_name_of_token());
             } else {
                 i -= (int) last_accepted_string.size();
                 std::string temp_name;

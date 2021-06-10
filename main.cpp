@@ -1,42 +1,41 @@
-#include "Imports.h"
-#include "LexicalAnalyzerScanner.h"
-#include "NFA_Generator.h"
+#include "../def/Imports.h"
+#include "../def/LexicalAnalyzerScanner.h"
+#include "Phase2/userInterface/File.h"
+#include "Phase2/FirstAndFollowTester.h"
 
 int main() {
     freopen("../out.txt", "w", stdout);
     LexicalAnalyzerScanner scanner;
-    /*
-        reading lexical rules
-    */
+    /*reading lexical rules*/
     scanner.scan_lexical_rules_file("../lexical_rules.txt");
-    scanner.write_lexical_output();
+    /*writing extracted regular expressions to out_testing.txt*/
+    scanner.write_lexical_output("../out_testing.txt");
     /*
-        generating NFA out of regular expressions
+     *generating NFA out of regular expressions
+     *converting NFA to its equivalent DFA
+     *minimizing DFA
     */
-    //I will remove this from the main function once we are satisfied with our model.
-    vector<RegularExpression> regular_expressions = scanner.get_regular_expressions();
-    NFA_Generator nfa_genarator;
-    for(int i =0; i < regular_expressions.size(); i++)
-    {
-        RegularExpression re = regular_expressions[i];
-        string value = re.get_value();
-        nfa_genarator.add_expression(re.get_type(), value);
+    scanner.build_automata();
+
+    freopen("../out2.txt", "w", stdout);
+
+ //   FirstAndFollowTester firstAndFollowTester;
+//    firstAndFollowTester.unit_test();
+    File file("../input2.txt");
+    try{
+        file.go();
+    } catch (std::string line) {
+        std::cout << "Error in input file please review it and try again." << std::endl;
+        std::cout << "In line " + line << std::endl;
     }
-    LexicalAnalyzer* lexicalAnalyzer = nfa_genarator.go();
-    vector<Token * > tokens = lexicalAnalyzer->convert("while(elzyady) { print('ana')}");
-    for(auto it : tokens){
-        cout<<it->toString()<<endl;
-    }
+
     /*
-        converting NFA to its equivalent DFA
+     *reading programs to be tested
+     *writing tokens to out.txt
     */
-    /*
-        minimizing DFA
-    */
-    /*
-        reading programs to be tested
-    */
-    scanner.scan_input_program("../testing_program.txt");
+
+    scanner.write_tokens_of("../testing_program2.txt");
+    InputMatcher::getInstance().match("$");
     cout << "DONE!" << std::endl;
     return 0;
 }

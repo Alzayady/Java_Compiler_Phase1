@@ -7,37 +7,13 @@ class RegularDefinition
 {
 
     public:
-        RegularDefinition(){
-            value = "";
-            type = "";
-        }
-        void set_value(string val)
-        {
-            value = val;
-        }
-        void append_to_redef_value(string str)
-        {
-            if (is_value_empty())
-                value = str;
-            else
-                value.append("|" + str);
-        }
-        bool is_value_empty()
-        {
-            return value == "";
-        }
-        string get_value()
-        {
-            return value;
-        }
-        void set_type(string ty)
-        {
-            type = ty;
-        }
-        string get_type()
-        {
-            return type;
-        }
+        RegularDefinition();
+        void set_value(string val);
+        void append_to_redef_value(string str);
+        bool is_value_empty();
+        string get_value();
+        void set_type(string ty);
+        string get_type();
         bool operator < (RegularDefinition rd) {
             return (rd.get_type().size() < type.size());
         }

@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Minimize.h"
+#include "Table.h"
 
 using namespace std;
 

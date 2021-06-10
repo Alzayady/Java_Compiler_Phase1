@@ -1,4 +1,5 @@
-#include "LexicalAnalyzerScanner.h"
+#include "../def/LexicalAnalyzerScanner.h"
+#include "../Phase2/def/InputMatcher.h"
 
 void LexicalAnalyzerScanner::scan_lexical_rules_file(string file_name)
 {
@@ -38,12 +39,11 @@ void LexicalAnalyzerScanner::scan_lexical_rules_file(string file_name)
     reverse(regular_expressions.begin(), regular_expressions.end());
     input_file.close();
 }
-void LexicalAnalyzerScanner::scan_input_program(string file_name)
+void LexicalAnalyzerScanner::write_tokens_of(string file_name)
 {
     fstream input_file;
     input_file.open (file_name, ios::out | ios::in);
     string line;
-
 
     if (input_file.is_open()){
         while (getline(input_file, line))
@@ -55,16 +55,18 @@ void LexicalAnalyzerScanner::scan_input_program(string file_name)
             {
                 if (token == "") 
                     continue;
-                cout << token +"\t" ;
+                vector<Token * > tokens = lexicalAnalyzer->convert(token);
+                for(auto it : tokens){
+                    //cout<<it->toString()<<endl;
+                }
             }
-            cout << endl;
         }
     }
 }
-void LexicalAnalyzerScanner::write_lexical_output()
+void LexicalAnalyzerScanner::write_lexical_output(string file_name)
 {
     fstream output_file;
-    output_file.open ("../out_testing.txt", ios::out | ios::trunc);
+    output_file.open (file_name, ios::out | ios::trunc);
     output_file << "Regular Definitions" <<endl;
     output_file << "Type\t\tValue" <<endl;
     vector<RegularDefinition> rd = get_regular_definitions();
@@ -79,19 +81,21 @@ void LexicalAnalyzerScanner::write_lexical_output()
     {
         output_file << re[i].get_type() + "\t\t" + re[i].get_value() << "" <<endl;
     }
-    output_file << "Keywords" <<endl;
-    vector<string> kw = get_keywords();
-    for(int i = 0; i< kw.size(); i++)
-    {
-        output_file << kw[i] << "" <<endl;
-    }
-    output_file << "Punctuations" <<endl;
-    vector<string> p = get_punctuations();
-    for(int i = 0; i< p.size(); i++)
-    {
-        output_file << p[i] << "" <<endl;
-    }
-
+    //uncomment this to print keywords and punctuations to out_testing.txt
+    /*
+        output_file << "Keywords" <<endl;
+        vector<string> kw = get_keywords();
+        for(int i = 0; i< kw.size(); i++)
+        {
+            output_file << kw[i] << "" <<endl;
+        }
+        output_file << "Punctuations" <<endl;
+        vector<string> p = get_punctuations();
+        for(int i = 0; i< p.size(); i++)
+        {
+            output_file << p[i] << "" <<endl;
+        }
+    */
     output_file.close();
 }
 string LexicalAnalyzerScanner::remove_spaces(string line)
@@ -112,7 +116,10 @@ void LexicalAnalyzerScanner::convert_strings_to_regular_expressions(vector<strin
     {
         RegularExpression re;
         string word = words[i], value="(";
-        re.set_type(word);
+        string temp = word;
+        if(word.size()==2 && word[0]=='\\')
+            temp = word.substr(1,word.size()-1);
+        re.set_type(temp);
         for(int j = 0; j< word.size(); j++)
         {
             value = value + word[j];
@@ -519,4 +526,14 @@ string LexicalAnalyzerScanner::add_concatenation_symbol(string line, int st, int
         i--;
     }
     return str;
+}
+void LexicalAnalyzerScanner::build_automata()
+{
+    for(int i =0; i < regular_expressions.size(); i++)
+    {
+        RegularExpression re = regular_expressions[i];
+        string value = re.get_value();
+        nfa_genarator.add_expression(re.get_type(), value);
+    }
+    lexicalAnalyzer = nfa_genarator.go();
 }

@@ -6,8 +6,8 @@
 #define JAVA_COMPILER_GRAPHADAPTER_H
 
 
-#include <Node.h>
-#include <LexicalAnalyzer.h>
+#include "../NFA/Node.h"
+#include "../analyze_to_tokens/LexicalAnalyzer.h"
 
 class GraphAdapter {
 public:

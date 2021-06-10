@@ -7,22 +7,10 @@ class RegularExpression
 {
 
     public:
-        void set_value(string val)
-        {
-            value = val;
-        }
-        string get_value()
-        {
-            return value;
-        }
-        void set_type(string ty)
-        {
-            type = ty;
-        }
-        string get_type()
-        {
-            return type;
-        }
+        void set_value(string val);
+        string get_value();
+        void set_type(string ty);
+        string get_type();
     private:
         string value;
         string type;

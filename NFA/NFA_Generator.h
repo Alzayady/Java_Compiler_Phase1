@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include "GraphAdapter.h"
+#include "../DFA/GraphAdapter.h"
 #include "Graph.h"
 
 class NFA_Generator {

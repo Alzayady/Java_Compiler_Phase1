@@ -3,9 +3,9 @@
 //
 
 #include "GraphAdapter.h"
-#include "Minimize.h"
-#include "ResultState.h"
-#include "State.h"
+#include "../Minimize DFA/minimize.h"
+#include "../DFA/state.h"
+
 
 std::set<Node *, cmp> get_epsilon_neighbours(Node *root);
 
