@@ -56,8 +56,9 @@ void LexicalAnalyzerScanner::write_tokens_of(string file_name)
                 if (token == "") 
                     continue;
                 vector<Token * > tokens = lexicalAnalyzer->convert(token);
+                freopen("../out.txt", "a", stdout);
                 for(auto it : tokens){
-                    //cout<<it->toString()<<endl;
+                    cout<<it->toString()<<endl;
                 }
             }
         }
@@ -527,13 +528,17 @@ string LexicalAnalyzerScanner::add_concatenation_symbol(string line, int st, int
     }
     return str;
 }
+LexicalAnalyzerScanner::LexicalAnalyzerScanner() {
+    nfa_genarator = new NFA_Generator;
+}
 void LexicalAnalyzerScanner::build_automata()
 {
     for(int i =0; i < regular_expressions.size(); i++)
     {
         RegularExpression re = regular_expressions[i];
         string value = re.get_value();
-        nfa_genarator.add_expression(re.get_type(), value);
+        nfa_genarator->add_expression(re.get_type(), value);
     }
-    lexicalAnalyzer = nfa_genarator.go();
+    lexicalAnalyzer = nfa_genarator->go();
+    delete nfa_genarator;
 }

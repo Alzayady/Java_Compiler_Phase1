@@ -47,3 +47,41 @@ ________________________________________________________________________________
 43 )     |   -1    |   -1    |   -1    |   -1    |   -1    |   -1    |   -1    |   -1    |   -1    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |   -1    |   -1    |   -1    |   -1    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    44   |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |   -1    |   -1     Accepted name :  id
 44 )     |   -1    |   -1    |   -1    |   -1    |   -1    |   -1    |   -1    |   -1    |   -1    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |   -1    |   -1    |   -1    |   -1    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    6    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |    9    |   -1    |   -1     Accepted name :  id
 
+name  : int   token : int
+name  : id   token : x
+name  : ;   token : ;
+name  : id   token : x
+name  : assign   token : =
+name  : num   token : 5
+name  : ;   token : ;
+name  : if   token : if
+name  : (   token : (
+name  : id   token : x
+name  : relop   token : >
+name  : num   token : 2
+name  : )   token : )
+name  : {   token : {
+name  : id   token : x
+name  : assign   token : =
+name  : num   token : 0
+name  : ;   token : ;
+name  : }   token : }
+name  : else   token : else
+name  : {   token : {
+name  : id   token : x
+name  : assign   token : =
+name  : num   token : 10
+name  : ;   token : ;
+name  : }   token : }
+name  : while   token : while
+name  : (   token : (
+name  : id   token : x
+name  : )   token : )
+name  : {   token : {
+name  : id   token : x
+name  : assign   token : =
+name  : id   token : x
+name  : addop   token : -
+name  : num   token : 1
+name  : ;   token : ;
+name  : }   token : }

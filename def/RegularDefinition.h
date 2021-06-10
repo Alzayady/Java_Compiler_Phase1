@@ -8,7 +8,6 @@ class RegularDefinition
 
     public:
         RegularDefinition();
-        void set_value(string val);
         void append_to_redef_value(string str);
         bool is_value_empty();
         string get_value();

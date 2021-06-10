@@ -4,10 +4,6 @@ RegularDefinition::RegularDefinition(){
     value = "";
     type = "";
 }
-void RegularDefinition::set_value(string val)
-{
-    value = val;
-}
 void RegularDefinition::append_to_redef_value(string str)
 {
     if (is_value_empty())

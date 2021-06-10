@@ -1,41 +1,46 @@
 #include "../def/Imports.h"
 #include "../def/LexicalAnalyzerScanner.h"
 #include "Phase2/userInterface/File.h"
-#include "Phase2/FirstAndFollowTester.h"
+#include "Phase2/def/InputMatcher.h"
 
 int main() {
     freopen("../out.txt", "w", stdout);
-    LexicalAnalyzerScanner scanner;
+    LexicalAnalyzerScanner* scanner = new LexicalAnalyzerScanner;
     /*reading lexical rules*/
-    scanner.scan_lexical_rules_file("../lexical_rules.txt");
+    scanner->scan_lexical_rules_file("../lexical_rules.txt");
     /*writing extracted regular expressions to out_testing.txt*/
-    scanner.write_lexical_output("../out_testing.txt");
+    scanner->write_lexical_output("../out_testing.txt");
     /*
      *generating NFA out of regular expressions
      *converting NFA to its equivalent DFA
      *minimizing DFA
     */
-    scanner.build_automata();
+    scanner->build_automata();
 
     freopen("../out2.txt", "w", stdout);
 
- //   FirstAndFollowTester firstAndFollowTester;
-//    firstAndFollowTester.unit_test();
-    File file("../input2.txt");
+    File* file = new File("../input2.txt");
+    bool ok = true;
     try{
-        file.go();
+        file->go();
     } catch (std::string line) {
         std::cout << "Error in input file please review it and try again." << std::endl;
         std::cout << "In line " + line << std::endl;
+        ok = false;
     }
 
+
+    delete file;
     /*
      *reading programs to be tested
      *writing tokens to out.txt
     */
-
-    scanner.write_tokens_of("../testing_program2.txt");
-    InputMatcher::getInstance().match("$");
-    cout << "DONE!" << std::endl;
+    if (ok) {
+        scanner->write_tokens_of("../testing_program2.txt");
+        delete scanner;
+        freopen("../out2.txt", "a", stdout);
+        InputMatcher::getInstance().match("$");
+        cout << "DONE!" << std::endl;
+    }
     return 0;
 }
