@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/Phase2/def/InputMatcher.h
+vector
+-
+string
+-
+map
+-
+unordered_set
+-
+iostream
+-
+algorithm
+-
+
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/Phase2/userInterface/File.h
+iostream
+-
+unordered_map
+-
+vector
+-
+
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/main.cpp
+../def/Imports.h
+D:/Study/projects/LexicalAnalyzer/def/Imports.h
+../def/LexicalAnalyzerScanner.h
+D:/Study/projects/LexicalAnalyzer/def/LexicalAnalyzerScanner.h
+Phase2/userInterface/File.h
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/Phase2/userInterface/File.h
+Phase2/def/InputMatcher.h
+D:/Study/projects/LexicalAnalyzer/Java_Compiler/Phase2/def/InputMatcher.h
+

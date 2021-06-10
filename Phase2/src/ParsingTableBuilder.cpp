@@ -187,17 +187,18 @@ void ParsingTableBuilder::build() {
 }
 
 void ParsingTableBuilder::print_first_follow() {
-    return ;
-    std::cout << "non_terminal\t\t\tfirst\t\t\tfollow" << std::endl;
+    freopen("../first_follow_tables.txt", "w", stdout);
+    std::cout << "non_terminal\t\t\t\tfirst\t\t\t\tfollow" << std::endl;
+    freopen("../first_follow_tables.txt", "a", stdout);
     for (auto &x: first) {
         if (!is_terminal[x.first] && x.first != epsilon) {
             std::string non_terminal = x.first;
-            std::cout << x.first + "\t\t\t";
+            std::cout << x.first + "\t\t\t\t";
             std::cout << "{ ";
             for (const auto &it : x.second) {
                 std::cout << it.second + ", ";
             }
-            std::cout << "}\t\t\t";
+            std::cout << "}\t\t\t\t";
             std::cout << "{ ";
             for (const auto &it : follow[x.first]) {
                 std::cout << it + ", ";
@@ -205,7 +206,8 @@ void ParsingTableBuilder::print_first_follow() {
             std::cout << "}" << std::endl;
         }
     }
-
+    freopen("../parsing_table.txt", "w", stdout);
+    std::cout << "table" << std::endl;
     std::unordered_set<std::string> inputs;
     std::unordered_set<std::string> colums;
 
@@ -229,7 +231,6 @@ void ParsingTableBuilder::print_first_follow() {
         }
         std::cout << std::endl;
     }
-
 }
 
 

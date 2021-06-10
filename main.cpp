@@ -4,7 +4,7 @@
 #include "Phase2/def/InputMatcher.h"
 
 int main() {
-    freopen("../out.txt", "w", stdout);
+    freopen("../minimization_and_tokens.txt", "w", stdout);
     LexicalAnalyzerScanner* scanner = new LexicalAnalyzerScanner;
     /*reading lexical rules*/
     scanner->scan_lexical_rules_file("../lexical_rules.txt");
@@ -38,7 +38,7 @@ int main() {
     if (ok) {
         scanner->write_tokens_of("../testing_program2.txt");
         delete scanner;
-        freopen("../out2.txt", "a", stdout);
+        freopen("../action_logs.txt", "a", stdout);
         InputMatcher::getInstance().match("$");
         cout << "DONE!" << std::endl;
     }

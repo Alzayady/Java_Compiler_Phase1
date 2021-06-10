@@ -56,7 +56,7 @@ void LexicalAnalyzerScanner::write_tokens_of(string file_name)
                 if (token == "") 
                     continue;
                 vector<Token * > tokens = lexicalAnalyzer->convert(token);
-                freopen("../out.txt", "a", stdout);
+                freopen("../minimization_and_tokens.txt", "a", stdout);
                 for(auto it : tokens){
                     cout<<it->toString()<<endl;
                 }

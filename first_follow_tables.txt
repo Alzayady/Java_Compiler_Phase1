@@ -1,0 +1,19 @@
+non_terminal				first				follow
+FACTOR				{ (, id, num, }				{ relop, addop, ;, mulop, }, -, +, ), (, id, num, }
+EXPRESSION2				{ \L, relop, }				{ ), }, ;, }
+TERM2				{ \L, mulop, }				{ }, ;, ), num, -, (, id, +, addop, relop, }
+ASSIGNMENT				{ id, }				{ $, }, if, int, while, float, id, }
+METHOD_BODY				{ float, id, if, int, while, }				{ $, }
+SIMPLE_EXPRESSION2				{ +, -, (, id, num, }				{ ;, }, ), addop, relop, }
+SIGN				{ +, -, }				{ id, (, num, }
+STATEMENT_LIST				{ float, id, if, int, while, }				{ $, }
+DECLARATION				{ float, int, }				{ $, }, if, int, while, float, id, }
+PRIMITIVE_TYPE				{ float, int, }				{ ;, }
+EXPRESSION				{ (, +, -, id, num, }				{ ;, }, ), }
+WHILE				{ while, }				{ $, }, if, int, while, float, id, }
+STATEMENT				{ id, float, int, if, while, }				{ $, }, if, int, while, float, id, }
+IF				{ if, }				{ $, }, if, int, while, float, id, }
+TERM				{ (, id, num, }				{ ), ;, addop, relop, }, (, id, +, num, -, }
+STATEMENT_LIST2				{ float, id, if, int, while, \L, }				{ $, }
+SIMPLE_EXPRESSION				{ (, +, -, id, num, }				{ ), }, ;, relop, }
+SIMPLE_EXPRESSION3				{ \L, addop, }				{ ;, }, ), relop, }

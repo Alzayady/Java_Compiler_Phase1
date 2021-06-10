@@ -40,7 +40,7 @@ std::vector<Token *> LexicalAnalyzer::convert(std::string str) {
                 i -= dif;
                 Token *token = new Token(acceptingName, last_accepted_string);
                 tokens.push_back(token);
-                freopen("../out2.txt", "a", stdout);
+                freopen("../action_logs.txt", "a", stdout);
                 InputMatcher::getInstance().match(token->get_name_of_token());
             } else {
                 i -= (int) last_accepted_string.size();
