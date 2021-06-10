@@ -17,9 +17,9 @@ int main() {
     */
     scanner->build_automata();
 
-    freopen("../out2.txt", "w", stdout);
+    freopen("../action_logs.txt", "w", stdout);
 
-    File* file = new File("../input2.txt");
+    File* file = new File("../phase2_rules.txt");
     bool ok = true;
     try{
         file->go();

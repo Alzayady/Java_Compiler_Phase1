@@ -52,19 +52,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Study\projects\LexicalAnalyzer\Java_Compiler
+CMAKE_SOURCE_DIR = E:\Documents\compilers\Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug
+CMAKE_BINARY_DIR = E:\Documents\compilers\Project\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Project.dir/depend.make
@@ -78,268 +78,268 @@ include CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/main.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/main.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project.dir/main.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\main.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\main.cpp.obj -c E:\Documents\compilers\Project\main.cpp
 
 CMakeFiles/Project.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/main.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\main.cpp > CMakeFiles\Project.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\main.cpp > CMakeFiles\Project.dir\main.cpp.i
 
 CMakeFiles/Project.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/main.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\main.cpp -o CMakeFiles\Project.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\main.cpp -o CMakeFiles\Project.dir\main.cpp.s
 
 CMakeFiles/Project.dir/src/LexicalAnalyzerScanner.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/src/LexicalAnalyzerScanner.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/src/LexicalAnalyzerScanner.cpp.obj: ../src/LexicalAnalyzerScanner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project.dir/src/LexicalAnalyzerScanner.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\LexicalAnalyzerScanner.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\src\LexicalAnalyzerScanner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project.dir/src/LexicalAnalyzerScanner.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\LexicalAnalyzerScanner.cpp.obj -c E:\Documents\compilers\Project\src\LexicalAnalyzerScanner.cpp
 
 CMakeFiles/Project.dir/src/LexicalAnalyzerScanner.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/LexicalAnalyzerScanner.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\src\LexicalAnalyzerScanner.cpp > CMakeFiles\Project.dir\src\LexicalAnalyzerScanner.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\src\LexicalAnalyzerScanner.cpp > CMakeFiles\Project.dir\src\LexicalAnalyzerScanner.cpp.i
 
 CMakeFiles/Project.dir/src/LexicalAnalyzerScanner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/LexicalAnalyzerScanner.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\src\LexicalAnalyzerScanner.cpp -o CMakeFiles\Project.dir\src\LexicalAnalyzerScanner.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\src\LexicalAnalyzerScanner.cpp -o CMakeFiles\Project.dir\src\LexicalAnalyzerScanner.cpp.s
 
 CMakeFiles/Project.dir/analyze_to_tokens/LexicalAnalyzer.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/analyze_to_tokens/LexicalAnalyzer.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/analyze_to_tokens/LexicalAnalyzer.cpp.obj: ../analyze_to_tokens/LexicalAnalyzer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/analyze_to_tokens/LexicalAnalyzer.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\analyze_to_tokens\LexicalAnalyzer.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\analyze_to_tokens\LexicalAnalyzer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/analyze_to_tokens/LexicalAnalyzer.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\analyze_to_tokens\LexicalAnalyzer.cpp.obj -c E:\Documents\compilers\Project\analyze_to_tokens\LexicalAnalyzer.cpp
 
 CMakeFiles/Project.dir/analyze_to_tokens/LexicalAnalyzer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/analyze_to_tokens/LexicalAnalyzer.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\analyze_to_tokens\LexicalAnalyzer.cpp > CMakeFiles\Project.dir\analyze_to_tokens\LexicalAnalyzer.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\analyze_to_tokens\LexicalAnalyzer.cpp > CMakeFiles\Project.dir\analyze_to_tokens\LexicalAnalyzer.cpp.i
 
 CMakeFiles/Project.dir/analyze_to_tokens/LexicalAnalyzer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/analyze_to_tokens/LexicalAnalyzer.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\analyze_to_tokens\LexicalAnalyzer.cpp -o CMakeFiles\Project.dir\analyze_to_tokens\LexicalAnalyzer.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\analyze_to_tokens\LexicalAnalyzer.cpp -o CMakeFiles\Project.dir\analyze_to_tokens\LexicalAnalyzer.cpp.s
 
 CMakeFiles/Project.dir/analyze_to_tokens/Token.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/analyze_to_tokens/Token.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/analyze_to_tokens/Token.cpp.obj: ../analyze_to_tokens/Token.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project.dir/analyze_to_tokens/Token.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\analyze_to_tokens\Token.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\analyze_to_tokens\Token.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project.dir/analyze_to_tokens/Token.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\analyze_to_tokens\Token.cpp.obj -c E:\Documents\compilers\Project\analyze_to_tokens\Token.cpp
 
 CMakeFiles/Project.dir/analyze_to_tokens/Token.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/analyze_to_tokens/Token.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\analyze_to_tokens\Token.cpp > CMakeFiles\Project.dir\analyze_to_tokens\Token.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\analyze_to_tokens\Token.cpp > CMakeFiles\Project.dir\analyze_to_tokens\Token.cpp.i
 
 CMakeFiles/Project.dir/analyze_to_tokens/Token.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/analyze_to_tokens/Token.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\analyze_to_tokens\Token.cpp -o CMakeFiles\Project.dir\analyze_to_tokens\Token.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\analyze_to_tokens\Token.cpp -o CMakeFiles\Project.dir\analyze_to_tokens\Token.cpp.s
 
 CMakeFiles/Project.dir/DFA/GraphAdapter.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/DFA/GraphAdapter.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/DFA/GraphAdapter.cpp.obj: ../DFA/GraphAdapter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project.dir/DFA/GraphAdapter.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\DFA\GraphAdapter.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\DFA\GraphAdapter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project.dir/DFA/GraphAdapter.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\DFA\GraphAdapter.cpp.obj -c E:\Documents\compilers\Project\DFA\GraphAdapter.cpp
 
 CMakeFiles/Project.dir/DFA/GraphAdapter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/DFA/GraphAdapter.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\DFA\GraphAdapter.cpp > CMakeFiles\Project.dir\DFA\GraphAdapter.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\DFA\GraphAdapter.cpp > CMakeFiles\Project.dir\DFA\GraphAdapter.cpp.i
 
 CMakeFiles/Project.dir/DFA/GraphAdapter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/DFA/GraphAdapter.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\DFA\GraphAdapter.cpp -o CMakeFiles\Project.dir\DFA\GraphAdapter.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\DFA\GraphAdapter.cpp -o CMakeFiles\Project.dir\DFA\GraphAdapter.cpp.s
 
 CMakeFiles/Project.dir/DFA/State.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/DFA/State.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/DFA/State.cpp.obj: ../DFA/State.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project.dir/DFA/State.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\DFA\State.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\DFA\State.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project.dir/DFA/State.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\DFA\State.cpp.obj -c E:\Documents\compilers\Project\DFA\State.cpp
 
 CMakeFiles/Project.dir/DFA/State.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/DFA/State.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\DFA\State.cpp > CMakeFiles\Project.dir\DFA\State.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\DFA\State.cpp > CMakeFiles\Project.dir\DFA\State.cpp.i
 
 CMakeFiles/Project.dir/DFA/State.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/DFA/State.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\DFA\State.cpp -o CMakeFiles\Project.dir\DFA\State.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\DFA\State.cpp -o CMakeFiles\Project.dir\DFA\State.cpp.s
 
 CMakeFiles/Project.dir/Minimize_DFA/Minimize.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/Minimize_DFA/Minimize.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/Minimize_DFA/Minimize.cpp.obj: ../Minimize\ DFA/Minimize.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project.dir/Minimize_DFA/Minimize.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Minimize_DFA\Minimize.cpp.obj -c "D:\Study\projects\LexicalAnalyzer\Java_Compiler\Minimize DFA\Minimize.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project.dir/Minimize_DFA/Minimize.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Minimize_DFA\Minimize.cpp.obj -c "E:\Documents\compilers\Project\Minimize DFA\Minimize.cpp"
 
 CMakeFiles/Project.dir/Minimize_DFA/Minimize.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/Minimize_DFA/Minimize.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Study\projects\LexicalAnalyzer\Java_Compiler\Minimize DFA\Minimize.cpp" > CMakeFiles\Project.dir\Minimize_DFA\Minimize.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Documents\compilers\Project\Minimize DFA\Minimize.cpp" > CMakeFiles\Project.dir\Minimize_DFA\Minimize.cpp.i
 
 CMakeFiles/Project.dir/Minimize_DFA/Minimize.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Minimize_DFA/Minimize.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Study\projects\LexicalAnalyzer\Java_Compiler\Minimize DFA\Minimize.cpp" -o CMakeFiles\Project.dir\Minimize_DFA\Minimize.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\Documents\compilers\Project\Minimize DFA\Minimize.cpp" -o CMakeFiles\Project.dir\Minimize_DFA\Minimize.cpp.s
 
 CMakeFiles/Project.dir/Minimize_DFA/Row.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/Minimize_DFA/Row.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/Minimize_DFA/Row.cpp.obj: ../Minimize\ DFA/Row.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Project.dir/Minimize_DFA/Row.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Minimize_DFA\Row.cpp.obj -c "D:\Study\projects\LexicalAnalyzer\Java_Compiler\Minimize DFA\Row.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Project.dir/Minimize_DFA/Row.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Minimize_DFA\Row.cpp.obj -c "E:\Documents\compilers\Project\Minimize DFA\Row.cpp"
 
 CMakeFiles/Project.dir/Minimize_DFA/Row.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/Minimize_DFA/Row.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Study\projects\LexicalAnalyzer\Java_Compiler\Minimize DFA\Row.cpp" > CMakeFiles\Project.dir\Minimize_DFA\Row.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Documents\compilers\Project\Minimize DFA\Row.cpp" > CMakeFiles\Project.dir\Minimize_DFA\Row.cpp.i
 
 CMakeFiles/Project.dir/Minimize_DFA/Row.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Minimize_DFA/Row.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Study\projects\LexicalAnalyzer\Java_Compiler\Minimize DFA\Row.cpp" -o CMakeFiles\Project.dir\Minimize_DFA\Row.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\Documents\compilers\Project\Minimize DFA\Row.cpp" -o CMakeFiles\Project.dir\Minimize_DFA\Row.cpp.s
 
 CMakeFiles/Project.dir/Minimize_DFA/Table.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/Minimize_DFA/Table.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/Minimize_DFA/Table.cpp.obj: ../Minimize\ DFA/Table.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Project.dir/Minimize_DFA/Table.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Minimize_DFA\Table.cpp.obj -c "D:\Study\projects\LexicalAnalyzer\Java_Compiler\Minimize DFA\Table.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Project.dir/Minimize_DFA/Table.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Minimize_DFA\Table.cpp.obj -c "E:\Documents\compilers\Project\Minimize DFA\Table.cpp"
 
 CMakeFiles/Project.dir/Minimize_DFA/Table.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/Minimize_DFA/Table.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Study\projects\LexicalAnalyzer\Java_Compiler\Minimize DFA\Table.cpp" > CMakeFiles\Project.dir\Minimize_DFA\Table.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Documents\compilers\Project\Minimize DFA\Table.cpp" > CMakeFiles\Project.dir\Minimize_DFA\Table.cpp.i
 
 CMakeFiles/Project.dir/Minimize_DFA/Table.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Minimize_DFA/Table.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Study\projects\LexicalAnalyzer\Java_Compiler\Minimize DFA\Table.cpp" -o CMakeFiles\Project.dir\Minimize_DFA\Table.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\Documents\compilers\Project\Minimize DFA\Table.cpp" -o CMakeFiles\Project.dir\Minimize_DFA\Table.cpp.s
 
 CMakeFiles/Project.dir/NFA/Edge.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/NFA/Edge.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/NFA/Edge.cpp.obj: ../NFA/Edge.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Project.dir/NFA/Edge.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\NFA\Edge.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\Edge.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Project.dir/NFA/Edge.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\NFA\Edge.cpp.obj -c E:\Documents\compilers\Project\NFA\Edge.cpp
 
 CMakeFiles/Project.dir/NFA/Edge.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/NFA/Edge.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\Edge.cpp > CMakeFiles\Project.dir\NFA\Edge.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\NFA\Edge.cpp > CMakeFiles\Project.dir\NFA\Edge.cpp.i
 
 CMakeFiles/Project.dir/NFA/Edge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/NFA/Edge.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\Edge.cpp -o CMakeFiles\Project.dir\NFA\Edge.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\NFA\Edge.cpp -o CMakeFiles\Project.dir\NFA\Edge.cpp.s
 
 CMakeFiles/Project.dir/NFA/Graph.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/NFA/Graph.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/NFA/Graph.cpp.obj: ../NFA/Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Project.dir/NFA/Graph.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\NFA\Graph.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Project.dir/NFA/Graph.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\NFA\Graph.cpp.obj -c E:\Documents\compilers\Project\NFA\Graph.cpp
 
 CMakeFiles/Project.dir/NFA/Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/NFA/Graph.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\Graph.cpp > CMakeFiles\Project.dir\NFA\Graph.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\NFA\Graph.cpp > CMakeFiles\Project.dir\NFA\Graph.cpp.i
 
 CMakeFiles/Project.dir/NFA/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/NFA/Graph.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\Graph.cpp -o CMakeFiles\Project.dir\NFA\Graph.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\NFA\Graph.cpp -o CMakeFiles\Project.dir\NFA\Graph.cpp.s
 
 CMakeFiles/Project.dir/NFA/NFA_Generator.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/NFA/NFA_Generator.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/NFA/NFA_Generator.cpp.obj: ../NFA/NFA_Generator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Project.dir/NFA/NFA_Generator.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\NFA\NFA_Generator.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\NFA_Generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Project.dir/NFA/NFA_Generator.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\NFA\NFA_Generator.cpp.obj -c E:\Documents\compilers\Project\NFA\NFA_Generator.cpp
 
 CMakeFiles/Project.dir/NFA/NFA_Generator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/NFA/NFA_Generator.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\NFA_Generator.cpp > CMakeFiles\Project.dir\NFA\NFA_Generator.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\NFA\NFA_Generator.cpp > CMakeFiles\Project.dir\NFA\NFA_Generator.cpp.i
 
 CMakeFiles/Project.dir/NFA/NFA_Generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/NFA/NFA_Generator.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\NFA_Generator.cpp -o CMakeFiles\Project.dir\NFA\NFA_Generator.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\NFA\NFA_Generator.cpp -o CMakeFiles\Project.dir\NFA\NFA_Generator.cpp.s
 
 CMakeFiles/Project.dir/NFA/Node.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/NFA/Node.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/NFA/Node.cpp.obj: ../NFA/Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Project.dir/NFA/Node.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\NFA\Node.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Project.dir/NFA/Node.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\NFA\Node.cpp.obj -c E:\Documents\compilers\Project\NFA\Node.cpp
 
 CMakeFiles/Project.dir/NFA/Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/NFA/Node.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\Node.cpp > CMakeFiles\Project.dir\NFA\Node.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\NFA\Node.cpp > CMakeFiles\Project.dir\NFA\Node.cpp.i
 
 CMakeFiles/Project.dir/NFA/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/NFA/Node.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\NFA\Node.cpp -o CMakeFiles\Project.dir\NFA\Node.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\NFA\Node.cpp -o CMakeFiles\Project.dir\NFA\Node.cpp.s
 
 CMakeFiles/Project.dir/DFA/ResultState.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/DFA/ResultState.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/DFA/ResultState.cpp.obj: ../DFA/ResultState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Project.dir/DFA/ResultState.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\DFA\ResultState.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\DFA\ResultState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Project.dir/DFA/ResultState.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\DFA\ResultState.cpp.obj -c E:\Documents\compilers\Project\DFA\ResultState.cpp
 
 CMakeFiles/Project.dir/DFA/ResultState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/DFA/ResultState.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\DFA\ResultState.cpp > CMakeFiles\Project.dir\DFA\ResultState.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\DFA\ResultState.cpp > CMakeFiles\Project.dir\DFA\ResultState.cpp.i
 
 CMakeFiles/Project.dir/DFA/ResultState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/DFA/ResultState.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\DFA\ResultState.cpp -o CMakeFiles\Project.dir\DFA\ResultState.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\DFA\ResultState.cpp -o CMakeFiles\Project.dir\DFA\ResultState.cpp.s
 
 CMakeFiles/Project.dir/src/RegularDefinition.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/src/RegularDefinition.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/src/RegularDefinition.cpp.obj: ../src/RegularDefinition.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Project.dir/src/RegularDefinition.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\RegularDefinition.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\src\RegularDefinition.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Project.dir/src/RegularDefinition.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\RegularDefinition.cpp.obj -c E:\Documents\compilers\Project\src\RegularDefinition.cpp
 
 CMakeFiles/Project.dir/src/RegularDefinition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/RegularDefinition.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\src\RegularDefinition.cpp > CMakeFiles\Project.dir\src\RegularDefinition.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\src\RegularDefinition.cpp > CMakeFiles\Project.dir\src\RegularDefinition.cpp.i
 
 CMakeFiles/Project.dir/src/RegularDefinition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/RegularDefinition.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\src\RegularDefinition.cpp -o CMakeFiles\Project.dir\src\RegularDefinition.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\src\RegularDefinition.cpp -o CMakeFiles\Project.dir\src\RegularDefinition.cpp.s
 
 CMakeFiles/Project.dir/src/RegularExpression.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/src/RegularExpression.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/src/RegularExpression.cpp.obj: ../src/RegularExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Project.dir/src/RegularExpression.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\RegularExpression.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\src\RegularExpression.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Project.dir/src/RegularExpression.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\RegularExpression.cpp.obj -c E:\Documents\compilers\Project\src\RegularExpression.cpp
 
 CMakeFiles/Project.dir/src/RegularExpression.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/RegularExpression.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\src\RegularExpression.cpp > CMakeFiles\Project.dir\src\RegularExpression.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\src\RegularExpression.cpp > CMakeFiles\Project.dir\src\RegularExpression.cpp.i
 
 CMakeFiles/Project.dir/src/RegularExpression.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/RegularExpression.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\src\RegularExpression.cpp -o CMakeFiles\Project.dir\src\RegularExpression.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\src\RegularExpression.cpp -o CMakeFiles\Project.dir\src\RegularExpression.cpp.s
 
 CMakeFiles/Project.dir/Phase2/src/InputMatcher.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/Phase2/src/InputMatcher.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/Phase2/src/InputMatcher.cpp.obj: ../Phase2/src/InputMatcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Project.dir/Phase2/src/InputMatcher.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Phase2\src\InputMatcher.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\Phase2\src\InputMatcher.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Project.dir/Phase2/src/InputMatcher.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Phase2\src\InputMatcher.cpp.obj -c E:\Documents\compilers\Project\Phase2\src\InputMatcher.cpp
 
 CMakeFiles/Project.dir/Phase2/src/InputMatcher.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/Phase2/src/InputMatcher.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\Phase2\src\InputMatcher.cpp > CMakeFiles\Project.dir\Phase2\src\InputMatcher.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\Phase2\src\InputMatcher.cpp > CMakeFiles\Project.dir\Phase2\src\InputMatcher.cpp.i
 
 CMakeFiles/Project.dir/Phase2/src/InputMatcher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Phase2/src/InputMatcher.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\Phase2\src\InputMatcher.cpp -o CMakeFiles\Project.dir\Phase2\src\InputMatcher.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\Phase2\src\InputMatcher.cpp -o CMakeFiles\Project.dir\Phase2\src\InputMatcher.cpp.s
 
 CMakeFiles/Project.dir/Phase2/src/ParsingTableBuilder.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/Phase2/src/ParsingTableBuilder.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/Phase2/src/ParsingTableBuilder.cpp.obj: ../Phase2/src/ParsingTableBuilder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Project.dir/Phase2/src/ParsingTableBuilder.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Phase2\src\ParsingTableBuilder.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\Phase2\src\ParsingTableBuilder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Project.dir/Phase2/src/ParsingTableBuilder.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Phase2\src\ParsingTableBuilder.cpp.obj -c E:\Documents\compilers\Project\Phase2\src\ParsingTableBuilder.cpp
 
 CMakeFiles/Project.dir/Phase2/src/ParsingTableBuilder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/Phase2/src/ParsingTableBuilder.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\Phase2\src\ParsingTableBuilder.cpp > CMakeFiles\Project.dir\Phase2\src\ParsingTableBuilder.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\Phase2\src\ParsingTableBuilder.cpp > CMakeFiles\Project.dir\Phase2\src\ParsingTableBuilder.cpp.i
 
 CMakeFiles/Project.dir/Phase2/src/ParsingTableBuilder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Phase2/src/ParsingTableBuilder.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\Phase2\src\ParsingTableBuilder.cpp -o CMakeFiles\Project.dir\Phase2\src\ParsingTableBuilder.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\Phase2\src\ParsingTableBuilder.cpp -o CMakeFiles\Project.dir\Phase2\src\ParsingTableBuilder.cpp.s
 
 CMakeFiles/Project.dir/Phase2/userInterface/File.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/Phase2/userInterface/File.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/Phase2/userInterface/File.cpp.obj: ../Phase2/userInterface/File.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Project.dir/Phase2/userInterface/File.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Phase2\userInterface\File.cpp.obj -c D:\Study\projects\LexicalAnalyzer\Java_Compiler\Phase2\userInterface\File.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Project.dir/Phase2/userInterface/File.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\Phase2\userInterface\File.cpp.obj -c E:\Documents\compilers\Project\Phase2\userInterface\File.cpp
 
 CMakeFiles/Project.dir/Phase2/userInterface/File.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/Phase2/userInterface/File.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Study\projects\LexicalAnalyzer\Java_Compiler\Phase2\userInterface\File.cpp > CMakeFiles\Project.dir\Phase2\userInterface\File.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\compilers\Project\Phase2\userInterface\File.cpp > CMakeFiles\Project.dir\Phase2\userInterface\File.cpp.i
 
 CMakeFiles/Project.dir/Phase2/userInterface/File.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Phase2/userInterface/File.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Study\projects\LexicalAnalyzer\Java_Compiler\Phase2\userInterface\File.cpp -o CMakeFiles\Project.dir\Phase2\userInterface\File.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\compilers\Project\Phase2\userInterface\File.cpp -o CMakeFiles\Project.dir\Phase2\userInterface\File.cpp.s
 
 # Object files for target Project
 Project_OBJECTS = \
@@ -389,7 +389,7 @@ Project.exe: CMakeFiles/Project.dir/build.make
 Project.exe: CMakeFiles/Project.dir/linklibs.rsp
 Project.exe: CMakeFiles/Project.dir/objects1.rsp
 Project.exe: CMakeFiles/Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable Project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable Project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -402,6 +402,6 @@ CMakeFiles/Project.dir/clean:
 .PHONY : CMakeFiles/Project.dir/clean
 
 CMakeFiles/Project.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Study\projects\LexicalAnalyzer\Java_Compiler D:\Study\projects\LexicalAnalyzer\Java_Compiler D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug D:\Study\projects\LexicalAnalyzer\Java_Compiler\cmake-build-debug\CMakeFiles\Project.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" E:\Documents\compilers\Project E:\Documents\compilers\Project E:\Documents\compilers\Project\cmake-build-debug E:\Documents\compilers\Project\cmake-build-debug E:\Documents\compilers\Project\cmake-build-debug\CMakeFiles\Project.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Project.dir/depend
 

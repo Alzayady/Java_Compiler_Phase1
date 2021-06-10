@@ -8,205 +8,205 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug"/>
+				<Option working_dir="E:/Documents/compilers/Project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Project">
-				<Option output="D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Project.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug"/>
+				<Option output="E:/Documents/compilers/Project/cmake-build-debug/Project.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Documents/compilers/Project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/NFA"/>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA"/>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/DFA"/>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens"/>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/def"/>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/src"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="E:/Documents/compilers/Project/NFA"/>
+					<Add directory="E:/Documents/compilers/Project/Minimize DFA"/>
+					<Add directory="E:/Documents/compilers/Project/DFA"/>
+					<Add directory="E:/Documents/compilers/Project/analyze_to_tokens"/>
+					<Add directory="E:/Documents/compilers/Project/def"/>
+					<Add directory="E:/Documents/compilers/Project/src"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Project/fast">
-				<Option output="D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Project.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug"/>
+				<Option output="E:/Documents/compilers/Project/cmake-build-debug/Project.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Documents/compilers/Project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/NFA"/>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA"/>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/DFA"/>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens"/>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/def"/>
-					<Add directory="D:/Study/projects/LexicalAnalyzer/Java_Compiler/src"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="E:/Documents/compilers/Project/NFA"/>
+					<Add directory="E:/Documents/compilers/Project/Minimize DFA"/>
+					<Add directory="E:/Documents/compilers/Project/DFA"/>
+					<Add directory="E:/Documents/compilers/Project/analyze_to_tokens"/>
+					<Add directory="E:/Documents/compilers/Project/def"/>
+					<Add directory="E:/Documents/compilers/Project/src"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project/fast"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug"/>
+				<Option working_dir="E:/Documents/compilers/Project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug"/>
+				<Option working_dir="E:/Documents/compilers/Project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Study/projects/LexicalAnalyzer/Java_Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;E:/Documents/compilers/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/DFA/GraphAdapter.cpp">
+		<Unit filename="E:/Documents/compilers/Project/DFA/GraphAdapter.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/DFA/GraphAdapter.h">
+		<Unit filename="E:/Documents/compilers/Project/DFA/GraphAdapter.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/DFA/ResultState.cpp">
+		<Unit filename="E:/Documents/compilers/Project/DFA/ResultState.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/DFA/ResultState.h">
+		<Unit filename="E:/Documents/compilers/Project/DFA/ResultState.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/DFA/State.cpp">
+		<Unit filename="E:/Documents/compilers/Project/DFA/State.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/DFA/State.h">
+		<Unit filename="E:/Documents/compilers/Project/DFA/State.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Minimize.cpp">
+		<Unit filename="E:/Documents/compilers/Project/Minimize DFA/Minimize.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Minimize.h">
+		<Unit filename="E:/Documents/compilers/Project/Minimize DFA/Minimize.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Row.cpp">
+		<Unit filename="E:/Documents/compilers/Project/Minimize DFA/Row.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Row.h">
+		<Unit filename="E:/Documents/compilers/Project/Minimize DFA/Row.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Table.cpp">
+		<Unit filename="E:/Documents/compilers/Project/Minimize DFA/Table.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Minimize DFA/Table.h">
+		<Unit filename="E:/Documents/compilers/Project/Minimize DFA/Table.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/NFA/Edge.cpp">
+		<Unit filename="E:/Documents/compilers/Project/NFA/Edge.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/NFA/Edge.h">
+		<Unit filename="E:/Documents/compilers/Project/NFA/Edge.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/NFA/Graph.cpp">
+		<Unit filename="E:/Documents/compilers/Project/NFA/Graph.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/NFA/Graph.h">
+		<Unit filename="E:/Documents/compilers/Project/NFA/Graph.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/NFA/NFA_Generator.cpp">
+		<Unit filename="E:/Documents/compilers/Project/NFA/NFA_Generator.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/NFA/NFA_Generator.h">
+		<Unit filename="E:/Documents/compilers/Project/NFA/NFA_Generator.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/NFA/Node.cpp">
+		<Unit filename="E:/Documents/compilers/Project/NFA/Node.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/NFA/Node.h">
+		<Unit filename="E:/Documents/compilers/Project/NFA/Node.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Phase2/def/InputMatcher.h">
+		<Unit filename="E:/Documents/compilers/Project/Phase2/def/InputMatcher.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Phase2/def/ParsingTableBuilder.h">
+		<Unit filename="E:/Documents/compilers/Project/Phase2/def/ParsingTableBuilder.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Phase2/src/InputMatcher.cpp">
+		<Unit filename="E:/Documents/compilers/Project/Phase2/src/InputMatcher.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Phase2/src/ParsingTableBuilder.cpp">
+		<Unit filename="E:/Documents/compilers/Project/Phase2/src/ParsingTableBuilder.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Phase2/userInterface/File.cpp">
+		<Unit filename="E:/Documents/compilers/Project/Phase2/userInterface/File.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/Phase2/userInterface/File.h">
+		<Unit filename="E:/Documents/compilers/Project/Phase2/userInterface/File.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens/LexicalAnalyzer.cpp">
+		<Unit filename="E:/Documents/compilers/Project/analyze_to_tokens/LexicalAnalyzer.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens/LexicalAnalyzer.h">
+		<Unit filename="E:/Documents/compilers/Project/analyze_to_tokens/LexicalAnalyzer.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens/Token.cpp">
+		<Unit filename="E:/Documents/compilers/Project/analyze_to_tokens/Token.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/analyze_to_tokens/Token.h">
+		<Unit filename="E:/Documents/compilers/Project/analyze_to_tokens/Token.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/def/Imports.h">
+		<Unit filename="E:/Documents/compilers/Project/def/Imports.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/def/LexicalAnalyzerScanner.h">
+		<Unit filename="E:/Documents/compilers/Project/def/LexicalAnalyzerScanner.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/def/RegularDefinition.h">
+		<Unit filename="E:/Documents/compilers/Project/def/RegularDefinition.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/def/RegularExpression.h">
+		<Unit filename="E:/Documents/compilers/Project/def/RegularExpression.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/main.cpp">
+		<Unit filename="E:/Documents/compilers/Project/main.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/src/LexicalAnalyzerScanner.cpp">
+		<Unit filename="E:/Documents/compilers/Project/src/LexicalAnalyzerScanner.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/src/RegularDefinition.cpp">
+		<Unit filename="E:/Documents/compilers/Project/src/RegularDefinition.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/src/RegularExpression.cpp">
+		<Unit filename="E:/Documents/compilers/Project/src/RegularExpression.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="D:/Study/projects/LexicalAnalyzer/Java_Compiler/CMakeLists.txt">
+		<Unit filename="E:/Documents/compilers/Project/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
