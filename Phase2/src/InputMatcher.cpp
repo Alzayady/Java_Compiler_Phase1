@@ -3,7 +3,7 @@
 //
 // Created by Hamza  on 6/9/2021.
 //
-bool debug_mode = true;
+bool debug_mode = false;
 const string epsilon = "\\L";
 
 void InputMatcher::setTable(map<pair<string, string>, vector<string> > parsing_table,

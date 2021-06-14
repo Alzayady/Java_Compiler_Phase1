@@ -54,6 +54,32 @@ vector
 Edge.h
 ../NFA/Edge.h
 
+../Phase2/def/InputMatcher.h
+vector
+-
+string
+-
+map
+-
+unordered_set
+-
+iostream
+-
+algorithm
+-
+
+../Phase2/def/ParsingTableBuilder.h
+iostream
+-
+vector
+-
+unordered_map
+-
+unordered_set
+-
+map
+-
+
 ../analyze_to_tokens/LexicalAnalyzer.h
 ../Minimize DFA/Table.h
 ../Minimize DFA/Table.h
@@ -96,7 +122,163 @@ Imports.h
 Imports.h
 ../def/Imports.h
 
-E:/Documents/compilers/Project/Phase2/def/InputMatcher.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/GraphAdapter.cpp
+GraphAdapter.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/GraphAdapter.h
+../Minimize DFA/minimize.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Minimize.h
+../DFA/state.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/State.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/GraphAdapter.h
+../NFA/Node.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Node.h
+../analyze_to_tokens/LexicalAnalyzer.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/analyze_to_tokens/LexicalAnalyzer.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/ResultState.cpp
+ResultState.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/ResultState.h
+assert.h
+-
+sstream
+-
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/ResultState.h
+string
+-
+unordered_map
+-
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/State.cpp
+State.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/State.h
+../NFA/Node.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Node.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/State.h
+../NFA/Node.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Node.h
+set
+-
+queue
+-
+map
+-
+unordered_map
+-
+assert.h
+-
+sstream
+-
+../NFA/Graph.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Graph.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Minimize.cpp
+iostream
+-
+Minimize.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Minimize.h
+Table.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Table.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Minimize.h
+../DFA/ResultState.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/ResultState.h
+vector
+-
+Table.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Table.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Row.cpp
+cassert
+-
+sstream
+-
+Row.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Row.h
+../DFA/ResultState.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/ResultState.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Row.h
+vector
+-
+Table.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Table.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Table.cpp
+algorithm
+-
+cassert
+-
+iostream
+-
+Table.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Table.h
+Row.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Row.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Table.h
+vector
+-
+unordered_set
+-
+map
+-
+../DFA/ResultState.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/ResultState.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Edge.cpp
+Edge.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Edge.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Edge.h
+Node.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Node.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Graph.cpp
+Graph.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Graph.h
+queue
+-
+unordered_set
+-
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Graph.h
+Node.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Node.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/NFA_Generator.cpp
+NFA_Generator.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/NFA_Generator.h
+stack
+-
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/NFA_Generator.h
+iostream
+-
+vector
+-
+../DFA/GraphAdapter.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/DFA/GraphAdapter.h
+Graph.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Graph.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Node.cpp
+Node.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Node.h
+unordered_set
+-
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Node.h
+iostream
+-
+vector
+-
+Edge.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/Edge.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/def/InputMatcher.h
 vector
 -
 string
@@ -110,7 +292,35 @@ iostream
 algorithm
 -
 
-E:/Documents/compilers/Project/Phase2/userInterface/File.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/src/InputMatcher.cpp
+../Phase2/def/InputMatcher.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/Phase2/def/InputMatcher.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/src/ParsingTableBuilder.cpp
+set
+-
+map
+-
+assert.h
+-
+../Phase2/def/ParsingTableBuilder.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/Phase2/def/ParsingTableBuilder.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/userInterface/File.cpp
+File.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/userInterface/File.h
+regex
+-
+fstream
+-
+set
+-
+../Phase2/def/ParsingTableBuilder.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/Phase2/def/ParsingTableBuilder.h
+../Phase2/def/InputMatcher.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/Phase2/def/InputMatcher.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/userInterface/File.h
 iostream
 -
 unordered_map
@@ -118,13 +328,79 @@ unordered_map
 vector
 -
 
-E:/Documents/compilers/Project/main.cpp
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/analyze_to_tokens/LexicalAnalyzer.cpp
+LexicalAnalyzer.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/analyze_to_tokens/LexicalAnalyzer.h
+../Phase2/def/InputMatcher.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/def/InputMatcher.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/analyze_to_tokens/LexicalAnalyzer.h
+../Minimize DFA/Table.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Minimize DFA/Table.h
+Token.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/analyze_to_tokens/Token.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/analyze_to_tokens/Token.cpp
+Token.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/analyze_to_tokens/Token.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/analyze_to_tokens/Token.h
+string
+-
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/Imports.h
+iostream
+-
+bits/stdc++.h
+-
+fstream
+-
+sstream
+-
+vector
+-
+algorithm
+-
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/LexicalAnalyzerScanner.h
+Imports.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/Imports.h
+RegularDefinition.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/RegularDefinition.h
+RegularExpression.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/RegularExpression.h
+../NFA/NFA_Generator.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/NFA/NFA_Generator.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/RegularDefinition.h
+Imports.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/Imports.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/RegularExpression.h
+Imports.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/Imports.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/main.cpp
 ../def/Imports.h
-E:/Documents/compilers/def/Imports.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/def/Imports.h
 ../def/LexicalAnalyzerScanner.h
-E:/Documents/compilers/def/LexicalAnalyzerScanner.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/def/LexicalAnalyzerScanner.h
 Phase2/userInterface/File.h
-E:/Documents/compilers/Project/Phase2/userInterface/File.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/userInterface/File.h
 Phase2/def/InputMatcher.h
-E:/Documents/compilers/Project/Phase2/def/InputMatcher.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/def/InputMatcher.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/src/LexicalAnalyzerScanner.cpp
+../def/LexicalAnalyzerScanner.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/LexicalAnalyzerScanner.h
+../Phase2/def/InputMatcher.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/Phase2/def/InputMatcher.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/src/RegularDefinition.cpp
+../def/RegularDefinition.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/RegularDefinition.h
+
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/src/RegularExpression.cpp
+../def/RegularExpression.h
+F:/SYNCED/3rd year - 2nd term/Compilers/Java_Compiler_merged/Java_Compiler_Phase1/def/RegularExpression.h
 
